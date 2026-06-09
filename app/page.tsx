@@ -44,6 +44,10 @@ export default function Home() {
           <h3>⭐ My team</h3>
           <p>Your fixtures, your group table, and where you can watch — all personalised.</p>
         </Link>
+        <Link href="/venue/" className="card">
+          <h3>🏟️ Host cities</h3>
+          <p>All 16 stadiums across the US, Mexico and Canada — and every match played at each.</p>
+        </Link>
       </section>
 
       <section>

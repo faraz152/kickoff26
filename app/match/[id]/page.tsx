@@ -44,7 +44,9 @@ export default function MatchPage({ params }: { params: { id: string } }) {
         {venue && (
           <div className="fact">
             <span className="muted">Venue</span>
-            <span className="fact-big">{venue.name}</span>
+            <Link href={`/venue/${venue.id}/`} className="fact-big">
+              {venue.name}
+            </Link>
             <span className="muted small">
               {venue.city}, {venue.country} · {venue.capacity.toLocaleString()} seats
             </span>

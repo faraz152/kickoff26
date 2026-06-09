@@ -87,7 +87,8 @@ Contributor-driven, none started:
 - ✅ Pirate-link guard + free-first ordering enforced in CI, not just by convention.
 - ✅ `SECURITY.md` documenting why static-export makes the Next.js server-side advisories non-applicable.
 - ✅ Project `CLAUDE.md` so future sessions pick up the data-model gotchas fast.
-- ✅ **Knockout bracket view** (`/bracket`) — R32 → Final + third-place tree rendered from `matches.json`, TZ-aware kickoffs, winner highlight. Placeholders (`Winner Group A`, `Winner of Match 74`) resolve to real teams automatically as the live updater fills the bracket.
+- ✅ **Knockout bracket view** (`/bracket`) — R32 → Final + third-place tree rendered from `matches.json`, TZ-aware kickoffs, winner highlight. Placeholders (`Winner Group A`, `Winner of Match 74`) resolve to real teams automatically as the live updater fills the bracket. Visually verified (mobile stacked / desktop horizontal columns).
+- ✅ **Venue / host-city pages** (`/venue`, `/venue/[id]`) — 16 stadiums grouped by country with match counts; each venue page lists its matches (TZ-aware) + add-all-to-calendar. Linked from match detail and the home cards. Lays the groundwork for the host-city travel guide.
 
 ---
 
