@@ -28,5 +28,8 @@ yarn-error.log*
 .vscode/
 *.swp
 
+# local agent / tooling state
+.claude/
+
 # vercel
 .vercel
