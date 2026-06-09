@@ -140,5 +140,20 @@
       { "name": "RTP", "type": "free-tv", "languages": ["pt"], "cost": "free", "url": "https://www.rtp.pt/", "source": "https://www.rtp.pt/", "note": "public broadcaster" },
       { "name": "Sport TV", "type": "paid-tv", "languages": ["pt"], "cost": "paid", "url": "https://www.sporttv.pt/", "source": "https://www.sporttv.pt/" }
     ]
+  },
+  "BE": {
+    "country": "Belgium",
+    "channels": [
+      { "name": "VRT", "type": "free-tv", "languages": ["nl"], "cost": "free", "url": "https://www.vrt.be/vrtmax/", "source": "https://sporza.be/", "note": "public broadcaster (Dutch)" },
+      { "name": "RTBF", "type": "free-tv", "languages": ["fr"], "cost": "free", "url": "https://www.rtbf.be/", "source": "https://www.rtbf.be/sport", "note": "public broadcaster (French)" }
+    ]
+  },
+  "CH": {
+    "country": "Switzerland",
+    "channels": [
+      { "name": "SRF", "type": "free-tv", "languages": ["de"], "cost": "free", "url": "https://www.srf.ch/sport", "source": "https://www.srf.ch/sport", "note": "SRG SSR public broadcaster (German)" },
+      { "name": "RTS", "type": "free-tv", "languages": ["fr"], "cost": "free", "url": "https://www.rts.ch/sport", "source": "https://www.rts.ch/sport", "note": "SRG SSR public broadcaster (French)" },
+      { "name": "RSI", "type": "free-tv", "languages": ["it"], "cost": "free", "url": "https://www.rsi.ch/sport", "source": "https://www.rsi.ch/sport", "note": "SRG SSR public broadcaster (Italian)" }
+    ]
   }
 }
