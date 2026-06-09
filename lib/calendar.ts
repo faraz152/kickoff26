@@ -1,8 +1,9 @@
 import type { Match, Team, Venue } from './types';
 import { matchTitle, type TeamLookup } from './labels';
 import type { IcsEvent } from './ics';
+import { SITE_URL } from './site';
 
-export const SITE = 'https://kickoff26.app'; // public site (domain registered near launch)
+export const SITE = SITE_URL; // back-compat alias; canonical value lives in lib/site.ts
 
 /** Convert matches into calendar events, resolving team names + venue for each. */
 export function toEvents(matches: Match[], teams: TeamLookup, venues: Map<string, Venue>): IcsEvent[] {

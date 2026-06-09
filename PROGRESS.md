@@ -89,6 +89,7 @@ Contributor-driven, none started:
 - ✅ Project `CLAUDE.md` so future sessions pick up the data-model gotchas fast.
 - ✅ **Knockout bracket view** (`/bracket`) — R32 → Final + third-place tree rendered from `matches.json`, TZ-aware kickoffs, winner highlight. Placeholders (`Winner Group A`, `Winner of Match 74`) resolve to real teams automatically as the live updater fills the bracket. Visually verified (mobile stacked / desktop horizontal columns).
 - ✅ **Venue / host-city pages** (`/venue`, `/venue/[id]`) — 16 stadiums grouped by country with match counts; each venue page lists its matches (TZ-aware) + add-all-to-calendar. Linked from match detail and the home cards. Lays the groundwork for the host-city travel guide.
+- ✅ **Launch SEO/social** — `app/sitemap.ts` (175 URLs), `app/robots.ts`, OpenGraph + Twitter card metadata with a branded `public/og.svg`, canonical URLs, `metadataBase` from `lib/site.ts`. *(PNG OG for SVG-averse scrapers is a polish follow-up.)*
 
 ---
 

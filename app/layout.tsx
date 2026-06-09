@@ -4,12 +4,32 @@ import './globals.css';
 import { TimezoneProvider } from '@/components/TimezoneContext';
 import TimezonePicker from '@/components/TimezonePicker';
 import ServiceWorker from '@/components/ServiceWorker';
+import { SITE_URL } from '@/lib/site';
+
+const description =
+  'Every FIFA World Cup 2026 match in your timezone, one-tap calendar export, and where to watch free in your country. Open data, no ads, no tracking.';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'kickoff26 — World Cup 2026 in your timezone, watch free',
-  description:
-    'Every FIFA World Cup 2026 match in your timezone, one-tap calendar export, and where to watch free in your country. Open data, no ads, no tracking.',
+  description,
   manifest: '/manifest.webmanifest',
+  applicationName: 'kickoff26',
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    siteName: 'kickoff26',
+    title: 'kickoff26 — World Cup 2026 in your timezone, watch free',
+    description,
+    url: '/',
+    images: [{ url: '/og.svg', width: 1200, height: 630, alt: 'kickoff26 — World Cup 2026 companion' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'kickoff26 — World Cup 2026 in your timezone, watch free',
+    description,
+    images: ['/og.svg'],
+  },
 };
 
 export const viewport: Viewport = {

@@ -24,4 +24,5 @@ These are the open pieces, roughly easiest-first. Open an issue before starting 
 ## Polish
 
 - **PWA icon set** (`good first issue`, `design`) — replace the single `public/icon.svg` with proper 192/512 PNGs + maskable variants.
+- **PNG social image** (`good first issue`, `design`) — the OG/Twitter card currently points at `public/og.svg`; some scrapers (Facebook, older Twitter) don't render SVG. Export a 1200×630 `og.png` from it and update the `images` URLs in `app/layout.tsx`.
 - **Lighthouse pass** (`good first issue`) — get every page to ≥90 on performance and accessibility; report numbers in the PR.
