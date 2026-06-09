@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="kickoff26">
+  <rect width="512" height="512" rx="96" fill="#0b7a3b"/>
+  <circle cx="256" cy="256" r="150" fill="#fff"/>
+  <path fill="#0f1115" d="M256 150l34 25-13 40h-42l-13-40z M180 230l38 0 13 40-31 23-34-25z M332 230l34 38-34 25-31-23 13-40z M214 318h84l13 40-55 30-55-30z"/>
+  <text x="256" y="470" text-anchor="middle" font-family="system-ui, sans-serif" font-size="64" font-weight="700" fill="#fff">26</text>
+</svg>
