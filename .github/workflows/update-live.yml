@@ -1,0 +1,41 @@
+name: update-live
+
+# Polls live scores during the tournament and commits result changes to data/matches.json, which
+# triggers a redeploy. The cron fires every 10 min, but the job self-gates: with no match in a live
+# window, update-results.mjs exits immediately having made zero API calls. Outside Jun 11 – Jul 19
+# every run is a fast no-op (safe to leave enabled), or disable the workflow from the Actions tab.
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-live
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/update-results.mjs
+        env:
+          LIVE_API_KEY: ${{ secrets.LIVE_API_KEY }}
+      - run: npm run validate:data
+      - name: commit if changed
+        run: |
+          if [[ -n "$(git status --porcelain data/matches.json)" ]]; then
+            git config user.name  "kickoff26-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add data/matches.json
+            git commit -m "chore(data): live update $(date -u +%FT%TZ)"
+            git push
+          else
+            echo "no changes"
+          fi

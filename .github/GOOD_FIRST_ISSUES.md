@@ -10,7 +10,8 @@ These are the open pieces, roughly easiest-first. Open an issue before starting 
 
 ## Features
 
-- **Auto-update results after each match** (`feature`) — implement `scripts/update-results.mjs` + a GitHub Actions cron scoped to match windows (Jun 11–Jul 19). Poll a free live-score API, recompute standings with the FIFA tiebreakers, rank the best third-placed teams, advance the bracket, commit the JSON. The `live-score-autoupdater` skill spec describes the whole pipeline; `lib/standings.ts` already has the group math.
+- **Third-place Annex table** (`feature`, `data`) — `scripts/update-results.mjs` already polls live scores, patches `matches.json`, and resolves group winners/runners-up (`1X`/`2X`) and knockout winners/losers (`W##`/`L##`). The one missing piece is the eight `3A/B/C/D/F` slots: encode FIFA's 495-combination Annex (sorted-8-group key → which third fills which R32 slot) as `data/thirds-annex.json` and wire it into `resolvePlaceholders()`. Get this wrong and the whole bracket is wrong, so source it from the official regulations, not memory.
+- **Confirm live-score API shapes** (`good first issue`) — the providers in `update-results.mjs` (balldontlie FIFA, TheSportsDB) are parsed best-effort. On matchday, check a real response and fix the field mapping / status strings if they differ.
 - **Offline PWA** (`feature`) — add a service worker that caches the app shell + `/data` so it works with no connection (built for stadiums and low-bandwidth regions). The manifest is already in place.
 - **Knockout bracket simulator** (`feature`) — let people pick winners through the bracket and share a result image. The placeholder encoding (`W74`, `1A`, `3A/B/C/D/F`) is already in `matches.json`.
 - **Resolve knockout names once groups finish** (`feature`) — turn `1A` / `2B` / `3A/B/C/D/F` into real teams using the FIFA Annex third-place assignment table. Reference logic is in the `worldcup-domain-expert` skill.

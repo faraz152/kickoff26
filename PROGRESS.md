@@ -46,7 +46,7 @@ Status of kickoff26 against the master plan in [`.plan/`](.plan/). Last updated 
 2. ✅ Schedule in auto-detected TZ; switching shifts every kickoff. Spot-check: Mexico v South Africa = **Thu Jun 11, 3:00 PM ET = Fri Jun 12, 12:00 AM PKT**.
 3. ✅ Where-to-Watch FREE lists free-to-air/legal-free first, then paid.
 4. ✅ Add-to-Calendar `.ics` opens at correct local time.
-5. ⏳ `update-results.mjs` mock → standings/bracket recompute. **Phase 2** — `lib/standings.ts` has the tiebreaker math; the polling script isn't built yet.
+5. ✅ `update-results.mjs` mock → standings/bracket recompute. `scripts/update-results.mjs` + `.github/workflows/update-live.yml` ship; mock cascade resolves group winners/runners-up and `W##`/`L##` knockout slots, idempotent re-run. *(Third-place `3A/B/C/D/F` slots still need FIFA's Annex table — see backlog.)*
 6. ⏳ PWA offline + Lighthouse ≥ 90. **Phase 2** — manifest shipped; service worker not yet.
 7. ✅ Repo opens cleanly: README renders, good-first-issues exist, data forkable with no key.
 
@@ -61,9 +61,9 @@ Contributor-driven, none started:
 - ⏳ `add-i18n: <language>` — team/UI translations, Arabic/RTL especially.
 
 **Features:**
-- ⏳ Auto-update results after each match (`scripts/update-results.mjs` + GitHub Actions cron) — `live-score-autoupdater` skill.
+- ◐ Auto-update results after each match — `scripts/update-results.mjs` + `update-live.yml` cron **done** (self-gates to live windows, patches scores, resolves `1X`/`2X` + `W##`/`L##`). ⏳ Remaining: source FIFA's 495-row third-place Annex table → `data/thirds-annex.json` to resolve the eight `3A/B/C/D/F` slots, and confirm the live API response shapes on matchday.
 - ⏳ Offline PWA (service worker caches shell + `/data`).
-- ⏳ Resolve knockout placeholders to real teams once groups finish (FIFA Annex third-place table).
+- ◐ Resolve knockout placeholders to real teams once groups finish — group + winner/loser slots done in the updater; third-place Annex assignment still open.
 - ⏳ Knockout bracket simulator ("predict & share").
 - ⏳ Fan-zone / watch-party map.
 - ⏳ Host-city & travel guide (visa, transit).

@@ -12,7 +12,8 @@
     "lint": "next lint",
     "build:data": "node scripts/build-data.mjs",
     "build:data:offline": "node scripts/build-data.mjs --offline",
-    "validate:data": "node scripts/validate-data.mjs"
+    "validate:data": "node scripts/validate-data.mjs",
+    "update:results": "node scripts/update-results.mjs"
   },
   "dependencies": {
     "next": "^14.2.35",
