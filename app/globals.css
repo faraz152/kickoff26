@@ -652,3 +652,91 @@ h2 {
     margin-left: 0;
   }
 }
+
+/* knockout bracket */
+.bracket {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+.bk-round {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 205px;
+  flex: 1;
+}
+.bk-round-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 2px;
+}
+.bk-third-title {
+  margin-top: 20px;
+}
+.bk-match {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: var(--text);
+}
+.bk-match:hover {
+  text-decoration: none;
+  border-color: var(--green-deep);
+  background: var(--surface-2);
+}
+.bk-side {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bk-flag {
+  font-size: 1.15rem;
+  line-height: 1;
+  width: 1.4em;
+  text-align: center;
+}
+.bk-name {
+  flex: 1;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bk-score {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--muted);
+}
+.bk-won .bk-name {
+  font-weight: 700;
+}
+.bk-won .bk-score {
+  color: var(--text);
+}
+.bk-tbd .bk-name {
+  color: var(--muted);
+}
+.bk-meta {
+  margin-top: 4px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 720px) {
+  .bracket {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+  .bk-round {
+    min-width: 0;
+  }
+}

@@ -57,8 +57,8 @@ Status of kickoff26 against the master plan in [`.plan/`](.plan/). Last updated 
 Contributor-driven, none started:
 
 **Mass-contribution (drives stars):**
-- ⏳ `add-broadcasts: <country>` — ~180 countries still unseeded (the main growth lever).
-- ⏳ `add-i18n: <language>` — team/UI translations, Arabic/RTL especially.
+- ⏳ `add-broadcasts: <country>` — ~180 countries still unseeded (the main growth lever). Hand-maintained by design: each entry needs per-country verification against the official broadcaster (legal/free-first hard-line), so it's human-PR territory, not auto-generated.
+- ⏳ `add-i18n: <language>` — team/UI translations, Arabic/RTL especially. **Blocked on an architecture decision:** the app prerenders English server-side (static export), so i18n needs either build-time per-locale routing (`/es/…`, `/ar/…`, more pages + SEO) or a client re-render layer (like the TZ swap). Pick the approach before building the `data/i18n/<lang>.json` framework.
 
 **Features:**
 - ◐ Auto-update results after each match — `scripts/update-results.mjs` + `update-live.yml` cron **done** (self-gates to live windows, patches scores, resolves `1X`/`2X` + `W##`/`L##`). ⏳ Remaining: source FIFA's 495-row third-place Annex table → `data/thirds-annex.json` to resolve the eight `3A/B/C/D/F` slots, and confirm the live API response shapes on matchday.
@@ -87,6 +87,7 @@ Contributor-driven, none started:
 - ✅ Pirate-link guard + free-first ordering enforced in CI, not just by convention.
 - ✅ `SECURITY.md` documenting why static-export makes the Next.js server-side advisories non-applicable.
 - ✅ Project `CLAUDE.md` so future sessions pick up the data-model gotchas fast.
+- ✅ **Knockout bracket view** (`/bracket`) — R32 → Final + third-place tree rendered from `matches.json`, TZ-aware kickoffs, winner highlight. Placeholders (`Winner Group A`, `Winner of Match 74`) resolve to real teams automatically as the live updater fills the bracket.
 
 ---
 
