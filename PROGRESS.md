@@ -34,7 +34,7 @@ Status of kickoff26 against the master plan in [`.plan/`](.plan/). Last updated 
 - [x] Schedule renders in auto-detected TZ; manual override works; opener shows **12:00 AM PKT (Jun 12)** for a Karachi user.
 - [x] Where-to-Watch lists free before paid for **≥20** seeded countries (21 seeded).
 - [x] Add-to-Calendar `.ics` opens at the correct local time (valid RFC 5545, UTC `Z`).
-- [ ] **Deployed on Vercel; Lighthouse perf ≥ 90.** ⏳ Build is deploy-ready (`out/`); deploy + Lighthouse run still to do.
+- ◐ **Deployed on Vercel; Lighthouse perf ≥ 90.** Lighthouse measured locally (mobile, throttled, against the static build): **home 93 · bracket 94 · schedule 82** (a11y 90–95, best-practices 96, SEO 100 across the board). Home + bracket clear ≥90; the data-heavy schedule is dragged by LCP/CLS from the intentional UTC→local re-render (and a local-server cache penalty Vercel won't have). ⏳ Vercel deploy (needs credentials) + a re-run on the live URL still to do.
 - [x] README + CONTRIBUTING + good-first-issues live. *(Demo GIF still to record.)*
 - [x] MIT (code) + CC0 (data).
 
@@ -47,7 +47,7 @@ Status of kickoff26 against the master plan in [`.plan/`](.plan/). Last updated 
 3. ✅ Where-to-Watch FREE lists free-to-air/legal-free first, then paid.
 4. ✅ Add-to-Calendar `.ics` opens at correct local time.
 5. ✅ `update-results.mjs` mock → standings/bracket recompute. `scripts/update-results.mjs` + `.github/workflows/update-live.yml` ship; mock cascade resolves group winners/runners-up and `W##`/`L##` knockout slots, idempotent re-run. *(Third-place `3A/B/C/D/F` slots still need FIFA's Annex table — see backlog.)*
-6. ◐ PWA offline + Lighthouse ≥ 90. Service worker shipped (`public/sw.js` + `components/ServiceWorker.tsx`): precaches the core navigations, stale-while-revalidate for `/_next` assets, network-first nav with offline fallback to the cached home. Data is baked into each page, so visited content works fully offline. ⏳ Lighthouse run still to do.
+6. ◐ PWA offline + Lighthouse ≥ 90. Service worker shipped (`public/sw.js` + `components/ServiceWorker.tsx`): precaches the core navigations, stale-while-revalidate for `/_next` assets, network-first nav with offline fallback to the cached home. Data is baked into each page, so visited content works fully offline. Lighthouse measured locally: home 93 / bracket 94 / schedule 82 (see DoD above). ⏳ Re-run on the deployed URL.
 7. ✅ Repo opens cleanly: README renders, good-first-issues exist, data forkable with no key.
 
 ---
