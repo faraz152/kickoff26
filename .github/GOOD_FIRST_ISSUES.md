@@ -18,7 +18,7 @@ These are the open pieces, roughly easiest-first. Open an issue before starting 
 - **Player & historical stats** (`feature`) — pull from StatsBomb open-data / openfootball historical for a "previous World Cups" section.
 - **Ticket links** (`feature`, link-only) — FIFA official + official resale. We link, never resell.
 - **Embeddable widgets** (`feature`) — a schedule/standings widget other sites can `<iframe>`.
-- **MCP server over `/data`** (`feature`) — so AI assistants can answer "when does my team play and where can I watch free."
+- **Extend the MCP server** (`feature`) — `mcp/server.mjs` exposes 5 read-only tools over `/data`. Add more (e.g. venue info, head-to-head, a knockout-bracket view) or MCP resources/prompts.
 - **Match-importance tags** (`feature`) — "dead rubber" vs "must-watch" based on qualification scenarios.
 
 ## Polish

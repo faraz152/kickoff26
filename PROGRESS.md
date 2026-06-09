@@ -70,7 +70,7 @@ Contributor-driven, none started:
 - ⏳ Player & historical stats (StatsBomb / openfootball historical).
 - ⏳ Ticket links (official + resale, link-only).
 - ⏳ Embeddable widgets (`packages/widgets`).
-- ⏳ MCP server over `/data`.
+- ✅ MCP server over `/data` — zero-dep stdio JSON-RPC server (`mcp/server.mjs`) with 5 read-only tools (`list_matches`, `team_schedule`, `where_to_watch`, `group_standings`, `next_matches`). Verified end-to-end (initialize → tools/list → tools/call).
 - ⏳ Match-importance tags ("dead rubber" vs "must-watch").
 - ⏳ Push notifications.
 

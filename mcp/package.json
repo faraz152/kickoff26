@@ -1,0 +1,14 @@
+{
+  "name": "kickoff26-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP server over the open kickoff26 World Cup 2026 dataset — schedules in any timezone, legal free-first where-to-watch.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "kickoff26-mcp": "server.mjs"
+  },
+  "files": [
+    "server.mjs"
+  ]
+}

@@ -48,11 +48,13 @@ The whole product is `/data/*.json`, public domain. Grab any of it directly:
 
 Kickoffs are stored as UTC ISO (`2026-06-11T19:00:00Z`) — convert to any timezone at render time with `Intl.DateTimeFormat`. Knockout matches reference earlier ones by FIFA number (`W74` = winner of match 74, `L101` = loser of match 101) and group slots by position (`1A`, `2B`, `3A/B/C/D/F`).
 
+There's also a zero-dependency **[MCP server](mcp/)** over the same data, so AI assistants can answer "when does my team play in my timezone?" and "where can I watch free?" — `node mcp/server.mjs`.
+
 ## Contributing
 
 The biggest way to help: **add your country to "where to watch."** Most countries aren't seeded yet, and it's a 5-minute PR — copy [`data/broadcasts.template.json`](data/broadcasts.template.json), fill in your free-to-air and official channels, link the source. See [CONTRIBUTING.md](CONTRIBUTING.md) and the [`good first issue`](https://github.com/faraz152/kickoff26/labels/good%20first%20issue) list.
 
-Other open work: offline PWA, auto-updating results, the knockout bracket simulator, fan-zone map, more languages. All in [.github/GOOD_FIRST_ISSUES.md](.github/GOOD_FIRST_ISSUES.md).
+Other open work: the knockout bracket simulator, fan-zone map, more languages, the third-place Annex table. All in [.github/GOOD_FIRST_ISSUES.md](.github/GOOD_FIRST_ISSUES.md).
 
 ## Stack
 
