@@ -47,7 +47,7 @@ Status of kickoff26 against the master plan in [`.plan/`](.plan/). Last updated 
 3. ✅ Where-to-Watch FREE lists free-to-air/legal-free first, then paid.
 4. ✅ Add-to-Calendar `.ics` opens at correct local time.
 5. ✅ `update-results.mjs` mock → standings/bracket recompute. `scripts/update-results.mjs` + `.github/workflows/update-live.yml` ship; mock cascade resolves group winners/runners-up and `W##`/`L##` knockout slots, idempotent re-run. *(Third-place `3A/B/C/D/F` slots still need FIFA's Annex table — see backlog.)*
-6. ⏳ PWA offline + Lighthouse ≥ 90. **Phase 2** — manifest shipped; service worker not yet.
+6. ◐ PWA offline + Lighthouse ≥ 90. Service worker shipped (`public/sw.js` + `components/ServiceWorker.tsx`): precaches the core navigations, stale-while-revalidate for `/_next` assets, network-first nav with offline fallback to the cached home. Data is baked into each page, so visited content works fully offline. ⏳ Lighthouse run still to do.
 7. ✅ Repo opens cleanly: README renders, good-first-issues exist, data forkable with no key.
 
 ---
@@ -62,7 +62,7 @@ Contributor-driven, none started:
 
 **Features:**
 - ◐ Auto-update results after each match — `scripts/update-results.mjs` + `update-live.yml` cron **done** (self-gates to live windows, patches scores, resolves `1X`/`2X` + `W##`/`L##`). ⏳ Remaining: source FIFA's 495-row third-place Annex table → `data/thirds-annex.json` to resolve the eight `3A/B/C/D/F` slots, and confirm the live API response shapes on matchday.
-- ⏳ Offline PWA (service worker caches shell + `/data`).
+- ✅ Offline PWA — service worker caches the app shell + visited pages (data is baked into each page, so no separate `/data` caching needed). Manifest already in place.
 - ◐ Resolve knockout placeholders to real teams once groups finish — group + winner/loser slots done in the updater; third-place Annex assignment still open.
 - ⏳ Knockout bracket simulator ("predict & share").
 - ⏳ Fan-zone / watch-party map.

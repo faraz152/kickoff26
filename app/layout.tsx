@@ -3,6 +3,7 @@ import Link from 'next/link';
 import './globals.css';
 import { TimezoneProvider } from '@/components/TimezoneContext';
 import TimezonePicker from '@/components/TimezonePicker';
+import ServiceWorker from '@/components/ServiceWorker';
 
 export const metadata: Metadata = {
   title: 'kickoff26 — World Cup 2026 in your timezone, watch free',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <ServiceWorker />
         <TimezoneProvider>
           <header className="site-header">
             <div className="wrap header-inner">
