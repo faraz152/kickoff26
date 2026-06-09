@@ -1,0 +1,50 @@
+{
+  "XX": {
+    "country": "Your Country Name",
+    "channels": [
+      {
+        "name": "Public Broadcaster — free-to-air channel",
+        "type": "free-tv",
+        "languages": ["en"],
+        "cost": "free",
+        "url": "https://official-watch-page.example",
+        "source": "https://official-broadcaster-site.example",
+        "note": "free-to-air, no login (optional caveat goes here)"
+      },
+      {
+        "name": "Official free streaming app",
+        "type": "free-stream",
+        "languages": ["en"],
+        "cost": "free",
+        "url": "https://official-stream.example",
+        "source": "https://official-broadcaster-site.example"
+      },
+      {
+        "name": "Official paid service (listed AFTER all free options)",
+        "type": "paid-stream",
+        "languages": ["en"],
+        "cost": "paid",
+        "url": "https://official-paid-service.example",
+        "source": "https://official-paid-service.example"
+      }
+    ]
+  }
+}
+```
+HOW TO ADD YOUR COUNTRY
+-----------------------
+1. Copy the block above into data/broadcasts.json, keyed by your ISO-3166 alpha-2
+   country code (e.g. "GB", "BR", "IN") instead of "XX".
+2. List FREE options FIRST: type "free-tv", then "free-stream", then "radio".
+   Put any paid option ("paid-tv" / "paid-stream") AFTER all the free ones.
+3. Every channel needs an official "source" URL — the broadcaster's OWN page.
+   No aggregators, no blogs.
+4. Language tags are ISO-639-1 ("en", "pt", "ar", ...).
+5. NEVER add pirate / unlicensed "free stream" links. Official rights-holders
+   only. Pirate links get the whole repo taken down — instant reject.
+6. VERIFY the free/paid flag against the broadcaster before submitting. A wrong
+   flag is the one thing that breaks trust in this feature.
+
+NOTE: this file is a template — it intentionally does not parse as pure JSON
+because of these instructions. Copy only the JSON object above into
+broadcasts.json.

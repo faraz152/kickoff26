@@ -1,0 +1,144 @@
+{
+  "GB": {
+    "country": "United Kingdom",
+    "channels": [
+      { "name": "BBC One / iPlayer", "type": "free-tv", "languages": ["en"], "cost": "free", "url": "https://www.bbc.co.uk/iplayer", "source": "https://www.bbc.co.uk/sport/football", "note": "free-to-air, no login" },
+      { "name": "ITV1 / ITVX", "type": "free-stream", "languages": ["en"], "cost": "free", "url": "https://www.itv.com/watch", "source": "https://www.itv.com/" }
+    ]
+  },
+  "BR": {
+    "country": "Brazil",
+    "channels": [
+      { "name": "TV Globo", "type": "free-tv", "languages": ["pt"], "cost": "free", "url": "https://globoplay.globo.com/", "source": "https://ge.globo.com/", "note": "free-to-air" },
+      { "name": "CazéTV (YouTube)", "type": "free-stream", "languages": ["pt"], "cost": "free", "url": "https://www.youtube.com/@CazeTV", "source": "https://www.youtube.com/@CazeTV", "note": "free live on YouTube" },
+      { "name": "SporTV", "type": "paid-tv", "languages": ["pt"], "cost": "paid", "url": "https://sportv.globo.com/", "source": "https://sportv.globo.com/" },
+      { "name": "Globoplay", "type": "paid-stream", "languages": ["pt"], "cost": "paid", "url": "https://globoplay.globo.com/", "source": "https://globoplay.globo.com/" }
+    ]
+  },
+  "JP": {
+    "country": "Japan",
+    "channels": [
+      { "name": "NHK", "type": "free-tv", "languages": ["ja"], "cost": "free", "url": "https://www.nhk.or.jp/", "source": "https://www.nhk.or.jp/", "note": "public broadcaster" },
+      { "name": "ABEMA", "type": "free-stream", "languages": ["ja"], "cost": "free", "url": "https://abema.tv/", "source": "https://abema.tv/", "note": "free streaming" }
+    ]
+  },
+  "AU": {
+    "country": "Australia",
+    "channels": [
+      { "name": "SBS", "type": "free-tv", "languages": ["en"], "cost": "free", "url": "https://www.sbs.com.au/sport", "source": "https://www.sbs.com.au/sport/football", "note": "free-to-air" },
+      { "name": "SBS On Demand", "type": "free-stream", "languages": ["en"], "cost": "free", "url": "https://www.sbs.com.au/ondemand", "source": "https://www.sbs.com.au/ondemand" },
+      { "name": "Optus Sport", "type": "paid-stream", "languages": ["en"], "cost": "paid", "url": "https://sport.optus.com.au/", "source": "https://sport.optus.com.au/" }
+    ]
+  },
+  "FR": {
+    "country": "France",
+    "channels": [
+      { "name": "TF1", "type": "free-tv", "languages": ["fr"], "cost": "free", "url": "https://www.tf1.fr/", "source": "https://www.tf1.fr/", "note": "free-to-air" },
+      { "name": "TF1+", "type": "free-stream", "languages": ["fr"], "cost": "free", "url": "https://www.tf1.fr/tf1plus", "source": "https://www.tf1.fr/" },
+      { "name": "beIN Sports", "type": "paid-tv", "languages": ["fr"], "cost": "paid", "url": "https://www.beinsports.com/fr/", "source": "https://www.beinsports.com/fr/" }
+    ]
+  },
+  "DE": {
+    "country": "Germany",
+    "channels": [
+      { "name": "ARD (Das Erste)", "type": "free-tv", "languages": ["de"], "cost": "free", "url": "https://www.sportschau.de/", "source": "https://www.sportschau.de/", "note": "public broadcaster" },
+      { "name": "ZDF", "type": "free-tv", "languages": ["de"], "cost": "free", "url": "https://www.zdf.de/sport", "source": "https://www.zdf.de/sport", "note": "public broadcaster" },
+      { "name": "MagentaTV", "type": "paid-stream", "languages": ["de"], "cost": "paid", "url": "https://www.telekom.de/magenta-tv", "source": "https://www.telekom.de/magenta-tv" }
+    ]
+  },
+  "ES": {
+    "country": "Spain",
+    "channels": [
+      { "name": "RTVE La 1", "type": "free-tv", "languages": ["es"], "cost": "free", "url": "https://www.rtve.es/play/", "source": "https://www.rtve.es/deportes/", "note": "public broadcaster" }
+    ]
+  },
+  "IT": {
+    "country": "Italy",
+    "channels": [
+      { "name": "RAI", "type": "free-tv", "languages": ["it"], "cost": "free", "url": "https://www.raiplay.it/", "source": "https://www.rai.it/", "note": "public broadcaster" }
+    ]
+  },
+  "MX": {
+    "country": "Mexico",
+    "channels": [
+      { "name": "Canal 5 (Televisa)", "type": "free-tv", "languages": ["es"], "cost": "free", "url": "https://www.vix.com/", "source": "https://www.televisa.com/", "note": "free-to-air" },
+      { "name": "Azteca 7 (TV Azteca)", "type": "free-tv", "languages": ["es"], "cost": "free", "url": "https://www.tvazteca.com/aztecadeportes/", "source": "https://www.tvazteca.com/aztecadeportes/", "note": "free-to-air" },
+      { "name": "Sky México", "type": "paid-tv", "languages": ["es"], "cost": "paid", "url": "https://www.sky.com.mx/", "source": "https://www.sky.com.mx/" }
+    ]
+  },
+  "AR": {
+    "country": "Argentina",
+    "channels": [
+      { "name": "TV Pública", "type": "free-tv", "languages": ["es"], "cost": "free", "url": "https://www.tvpublica.com.ar/", "source": "https://www.tvpublica.com.ar/", "note": "free-to-air" },
+      { "name": "TyC Sports", "type": "paid-tv", "languages": ["es"], "cost": "paid", "url": "https://www.tycsports.com/", "source": "https://www.tycsports.com/" },
+      { "name": "DirecTV Sports", "type": "paid-tv", "languages": ["es"], "cost": "paid", "url": "https://www.directvgo.com/", "source": "https://www.directvgo.com/" }
+    ]
+  },
+  "US": {
+    "country": "United States",
+    "channels": [
+      { "name": "Telemundo", "type": "free-tv", "languages": ["es"], "cost": "free", "url": "https://www.telemundo.com/deportes", "source": "https://www.telemundodeportes.com/", "note": "free-to-air (Spanish)" },
+      { "name": "FOX", "type": "free-tv", "languages": ["en"], "cost": "free", "url": "https://www.fox.com/", "source": "https://www.foxsports.com/soccer", "note": "FOX broadcast network is free-to-air; some matches on FS1 (cable)" },
+      { "name": "Tubi", "type": "free-stream", "languages": ["en"], "cost": "free", "url": "https://tubitv.com/", "source": "https://tubitv.com/", "note": "free ad-supported streaming (FOX-owned)" },
+      { "name": "Peacock", "type": "paid-stream", "languages": ["es"], "cost": "paid", "url": "https://www.peacocktv.com/", "source": "https://www.peacocktv.com/" },
+      { "name": "Fubo", "type": "paid-stream", "languages": ["en"], "cost": "paid", "url": "https://www.fubo.tv/", "source": "https://www.fubo.tv/" }
+    ]
+  },
+  "CA": {
+    "country": "Canada",
+    "channels": [
+      { "name": "CTV", "type": "free-tv", "languages": ["en"], "cost": "free", "url": "https://www.ctv.ca/", "source": "https://www.tsn.ca/", "note": "selected matches free-to-air — verify per match" },
+      { "name": "TSN", "type": "paid-tv", "languages": ["en"], "cost": "paid", "url": "https://www.tsn.ca/", "source": "https://www.tsn.ca/" },
+      { "name": "RDS", "type": "paid-tv", "languages": ["fr"], "cost": "paid", "url": "https://www.rds.ca/", "source": "https://www.rds.ca/" }
+    ]
+  },
+  "IN": {
+    "country": "India",
+    "channels": [
+      { "name": "JioHotstar", "type": "free-stream", "languages": ["en", "hi"], "cost": "free", "url": "https://www.hotstar.com/in", "source": "https://www.hotstar.com/in", "note": "mobile free for selected matches in past editions — verify 2026 rights" },
+      { "name": "Sony Sports Network", "type": "paid-tv", "languages": ["en", "hi"], "cost": "paid", "url": "https://www.sonyliv.com/", "source": "https://www.sonyliv.com/" }
+    ]
+  },
+  "KR": {
+    "country": "South Korea",
+    "channels": [
+      { "name": "KBS", "type": "free-tv", "languages": ["ko"], "cost": "free", "url": "https://www.kbs.co.kr/", "source": "https://www.kbs.co.kr/", "note": "public broadcaster" },
+      { "name": "MBC", "type": "free-tv", "languages": ["ko"], "cost": "free", "url": "https://www.imbc.com/", "source": "https://www.imbc.com/" },
+      { "name": "SBS", "type": "free-tv", "languages": ["ko"], "cost": "free", "url": "https://www.sbs.co.kr/", "source": "https://www.sbs.co.kr/" }
+    ]
+  },
+  "SA": {
+    "country": "Saudi Arabia",
+    "channels": [
+      { "name": "Saudi Sports (SSC)", "type": "free-tv", "languages": ["ar"], "cost": "free", "url": "https://ssc.sa/", "source": "https://ssc.sa/", "note": "selected matches free-to-air — verify per match" },
+      { "name": "beIN Sports", "type": "paid-tv", "languages": ["ar"], "cost": "paid", "url": "https://www.beinsports.com/ar/", "source": "https://www.beinsports.com/ar/", "note": "dominant rights-holder across MENA" }
+    ]
+  },
+  "ZA": {
+    "country": "South Africa",
+    "channels": [
+      { "name": "SABC", "type": "free-tv", "languages": ["en"], "cost": "free", "url": "https://www.sabc.co.za/", "source": "https://www.sabcsport.com/", "note": "public broadcaster — selected matches free-to-air" },
+      { "name": "SuperSport (DStv)", "type": "paid-tv", "languages": ["en"], "cost": "paid", "url": "https://supersport.com/", "source": "https://supersport.com/" }
+    ]
+  },
+  "NG": {
+    "country": "Nigeria",
+    "channels": [
+      { "name": "NTA", "type": "free-tv", "languages": ["en"], "cost": "free", "url": "https://www.nta.ng/", "source": "https://www.nta.ng/", "note": "national broadcaster — selected matches free-to-air" },
+      { "name": "SuperSport (DStv)", "type": "paid-tv", "languages": ["en"], "cost": "paid", "url": "https://supersport.com/", "source": "https://supersport.com/" }
+    ]
+  },
+  "NL": {
+    "country": "Netherlands",
+    "channels": [
+      { "name": "NOS", "type": "free-tv", "languages": ["nl"], "cost": "free", "url": "https://nos.nl/sport", "source": "https://nos.nl/sport/voetbal", "note": "public broadcaster" }
+    ]
+  },
+  "PT": {
+    "country": "Portugal",
+    "channels": [
+      { "name": "RTP", "type": "free-tv", "languages": ["pt"], "cost": "free", "url": "https://www.rtp.pt/", "source": "https://www.rtp.pt/", "note": "public broadcaster" },
+      { "name": "Sport TV", "type": "paid-tv", "languages": ["pt"], "cost": "paid", "url": "https://www.sporttv.pt/", "source": "https://www.sporttv.pt/" }
+    ]
+  }
+}
