@@ -1,0 +1,28 @@
+{
+  "name": "kickoff26",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Every World Cup 2026 match in your timezone. Where to watch free in your country. Open data, no ads.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build:data": "node scripts/build-data.mjs",
+    "build:data:offline": "node scripts/build-data.mjs --offline",
+    "validate:data": "node scripts/validate-data.mjs"
+  },
+  "dependencies": {
+    "next": "^14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.5.3"
+  }
+}
