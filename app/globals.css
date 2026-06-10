@@ -740,3 +740,49 @@ h2 {
     min-width: 0;
   }
 }
+
+/* bracket simulator (/predict) — minimal; reuses the .bracket / .bk-* layout */
+.sim-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0 16px;
+}
+.sim-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.sim-champ {
+  color: var(--gold);
+}
+.sim-side {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font: inherit;
+  padding: 4px 4px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.sim-side:hover:not(:disabled) {
+  background: var(--surface-2);
+}
+.sim-side.picked {
+  background: rgba(24, 165, 88, 0.16);
+}
+.sim-side.picked .bk-name {
+  font-weight: 700;
+  color: var(--green);
+}
+.sim-side:disabled {
+  opacity: 0.45;
+  cursor: default;
+}

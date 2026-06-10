@@ -35,7 +35,7 @@ export default function BracketPage() {
       <h1>Knockout bracket</h1>
       <p className="muted">
         The road to the final on <strong>July 19</strong> at MetLife Stadium. Slots fill in as the groups finish and
-        each tie is decided — kickoffs are in your timezone.
+        each tie is decided — kickoffs are in your timezone. <Link href="/predict/">Predict your own →</Link>
       </p>
 
       <div className="bracket">

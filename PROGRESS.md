@@ -64,7 +64,7 @@ Contributor-driven, none started:
 - ◐ Auto-update results after each match — `update-results.mjs` + `update-live.yml` cron **done**, now wired to a **verified** live source: TheSportsDB's FIFA World Cup feed (league 4429, keyless), whose team names all map to our slugs and whose schedule matches our fixtures (confirmed against the real API — the opener resolves correctly). Self-gates to live windows, robust status map (NS/FT/AET/PEN/1H…), patches scores, resolves `1X`/`2X` + `W##`/`L##`. ⏳ Remaining: source FIFA's 495-row third-place Annex table → `thirds-annex.json` for the eight `3A/B/C/D/F` slots.
 - ✅ Offline PWA — service worker caches the app shell + visited pages (data is baked into each page, so no separate `/data` caching needed). Manifest already in place.
 - ◐ Resolve knockout placeholders to real teams once groups finish — group + winner/loser slots done in the updater; third-place Annex assignment still open.
-- ⏳ Knockout bracket simulator ("predict & share").
+- ✅ Knockout bracket simulator ("predict & share") — `/predict` ([components/BracketSimulator.tsx](components/BracketSimulator.tsx)): pick winners through the tree, picks propagate via the `W##`/`L##` graph, shareable via URL hash (verified: propagation → champion, and a shared link restores the exact bracket on reload). Minimal UI by design — the polished version lives in the private app.
 - ⏳ Fan-zone / watch-party map.
 - ⏳ Host-city & travel guide (visa, transit).
 - ⏳ Player & historical stats (StatsBomb / openfootball historical).

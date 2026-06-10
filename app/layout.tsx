@@ -53,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/schedule/">Schedule</Link>
                 <Link href="/groups/">Groups</Link>
                 <Link href="/bracket/">Bracket</Link>
+                <Link href="/predict/">Predict</Link>
                 <Link href="/watch/">Where to Watch</Link>
                 <Link href="/my-team/">My Team</Link>
               </nav>
