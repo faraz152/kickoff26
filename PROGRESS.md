@@ -1,8 +1,8 @@
 # Progress
 
-Status of kickoff26 against the master plan in [`.plan/`](.plan/). Last updated 2026-06-09.
+Status of kickoff26 against the master plan in [`.plan/`](.plan/). Last updated 2026-06-10.
 
-**Where it stands:** MVP is built, verified, and live on GitHub. Repo: https://github.com/faraz152/kickoff26 (public, CI green). Not yet deployed to a public URL; the Phase-2 feature backlog is open for contributors.
+**Where it stands:** MVP is built, verified, and live on GitHub. Repo: https://github.com/faraz152/kickoff26 (public, CI green). Dev server runs via `npm run dev` (port 3000). Not yet deployed to a public URL; the Phase-2 feature backlog is open for contributors.
 
 ---
 
