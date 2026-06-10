@@ -1,4 +1,4 @@
-import { getBroadcasts } from '@/lib/data';
+import { getBroadcasts } from '@kickoff26/data';
 import WhereToWatch from '@/components/WhereToWatch';
 
 export const metadata = { title: 'Where to watch free — kickoff26' };

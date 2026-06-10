@@ -5,12 +5,12 @@ These are the open pieces, roughly easiest-first. Open an issue before starting 
 ## Mass-contribution (no code, big impact)
 
 - **Add your country's broadcasts** (`good first issue`, `data`) — one PR per missing country. Free-to-air + official channels, free-first, official sources. See [CONTRIBUTING.md](../CONTRIBUTING.md). This is the highest-value contribution and there are ~180 countries to go.
-- **Translate team / UI names** (`good first issue`, `i18n`) — add a `data/i18n/<lang>.json` with team display names and the handful of UI strings. Arabic/RTL especially wanted.
+- **Translate team / UI names** (`good first issue`, `i18n`) — add a `packages/data/data/i18n/<lang>.json` with team display names and the handful of UI strings. Arabic/RTL especially wanted.
 - **Verify a seeded country** (`good first issue`, `data`) — pick a country already in `broadcasts.json`, confirm each free/paid flag against the broadcaster's own site for 2026, and fix or remove the `note`.
 
 ## Features
 
-- **Third-place Annex table** (`feature`, `data`) — `scripts/update-results.mjs` already polls live scores, patches `matches.json`, and resolves group winners/runners-up (`1X`/`2X`) and knockout winners/losers (`W##`/`L##`). The one missing piece is the eight `3A/B/C/D/F` slots: encode FIFA's 495-combination Annex (sorted-8-group key → which third fills which R32 slot) as `data/thirds-annex.json` and wire it into `resolvePlaceholders()`. Get this wrong and the whole bracket is wrong, so source it from the official regulations, not memory.
+- **Third-place Annex table** (`feature`, `data`) — `packages/data/scripts/update-results.mjs` already polls live scores, patches `matches.json`, and resolves group winners/runners-up (`1X`/`2X`) and knockout winners/losers (`W##`/`L##`). The one missing piece is the eight `3A/B/C/D/F` slots: encode FIFA's 495-combination Annex (sorted-8-group key → which third fills which R32 slot) as `packages/data/data/thirds-annex.json` and wire it into `resolvePlaceholders()`. Get this wrong and the whole bracket is wrong, so source it from the official regulations, not memory.
 - **Confirm live-score API shapes** (`good first issue`) — the providers in `update-results.mjs` (balldontlie FIFA, TheSportsDB) are parsed best-effort. On matchday, check a real response and fix the field mapping / status strings if they differ.
 - **Knockout bracket simulator** (`feature`) — the read-only bracket view at `/bracket` ([app/bracket/page.tsx](../app/bracket/page.tsx)) is the foundation; make it interactive — let people pick winners through the tree and share a result image. The placeholder encoding (`W74`, `1A`, `3A/B/C/D/F`) is already in `matches.json`.
 - **Fan-zone / watch-party map** (`feature`) — FIFA Fan Festival locations + community-added pubs/venues per host city.

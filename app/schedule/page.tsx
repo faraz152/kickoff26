@@ -1,5 +1,5 @@
-import { getMatches, getTeams, getVenues } from '@/lib/data';
-import { toEvents, teamMap, venueMap } from '@/lib/calendar';
+import { getMatches, getTeams, getVenues } from '@kickoff26/data';
+import { toEvents, teamMap, venueMap } from '@kickoff26/core';
 import ScheduleView from '@/components/ScheduleView';
 import AddToCalendar from '@/components/AddToCalendar';
 

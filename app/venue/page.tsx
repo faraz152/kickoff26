@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getVenues, getMatches } from '@/lib/data';
+import { getVenues, getMatches } from '@kickoff26/data';
 
 export const metadata = { title: 'Venues & host cities — kickoff26' };
 

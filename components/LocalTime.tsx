@@ -1,6 +1,6 @@
 'use client';
 
-import { formatKickoff } from '@/lib/tz';
+import { formatKickoff } from '@kickoff26/core';
 import { useTimezone } from './TimezoneContext';
 
 /** Renders a kickoff in the user's timezone once detected; shows UTC as a labelled fallback first. */

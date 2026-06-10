@@ -5,18 +5,25 @@
   "description": "Every World Cup 2026 match in your timezone. Where to watch free in your country. Open data, no ads.",
   "license": "MIT",
   "type": "module",
+  "workspaces": [
+    "packages/*",
+    "mcp"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm run build:packages && next dev",
+    "build": "npm run build:packages && next build",
+    "build:packages": "npm -w @kickoff26/core run build && npm -w @kickoff26/data run build",
     "start": "next start",
     "lint": "next lint",
-    "build:data": "node scripts/build-data.mjs",
-    "build:data:offline": "node scripts/build-data.mjs --offline",
-    "validate:data": "node scripts/validate-data.mjs",
-    "update:results": "node scripts/update-results.mjs",
+    "build:data": "npm -w @kickoff26/data run build:data",
+    "build:data:offline": "npm -w @kickoff26/data run build:data:offline",
+    "validate:data": "npm -w @kickoff26/data run validate",
+    "update:results": "npm -w @kickoff26/data run update:results",
     "mcp": "node mcp/server.mjs"
   },
   "dependencies": {
+    "@kickoff26/core": "^0.1.0",
+    "@kickoff26/data": "^0.1.0",
     "next": "^14.2.35",
     "react": "18.3.1",
     "react-dom": "18.3.1"

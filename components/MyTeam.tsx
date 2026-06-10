@@ -2,11 +2,11 @@
 
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
-import type { Broadcasts, Match, Team, Venue } from '@/lib/types';
-import { formatKickoff } from '@/lib/tz';
-import { tokenLabel, matchContext } from '@/lib/labels';
-import { computeStandings } from '@/lib/standings';
-import { toEvents } from '@/lib/calendar';
+import type { Broadcasts, Match, Team, Venue } from '@kickoff26/core';
+import { formatKickoff } from '@kickoff26/core';
+import { tokenLabel, matchContext } from '@kickoff26/core';
+import { computeStandings } from '@kickoff26/core';
+import { toEvents } from '@kickoff26/core';
 import { useTimezone } from './TimezoneContext';
 import AddToCalendar from './AddToCalendar';
 import WhereToWatch from './WhereToWatch';

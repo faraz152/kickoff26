@@ -16,7 +16,7 @@ It's a static site built entirely from open data — no backend, no API keys, no
 
 - **Free-first "where to watch."** Pick your country and you get the free-to-air channels and official free streams first (BBC, TF1, SBS, CazéTV, Tubi, ABEMA…), paid options after. We never link pirate streams — just the legal free options nobody else bothers to sort to the top.
 - **Actually your timezone.** Auto-detected, switchable to any IANA zone, DST-correct. A match that kicks off Thursday afternoon in New York shows as Friday 12:00 AM if you're in Karachi — and lands in your calendar at the right moment.
-- **Open data layer.** Everything lives in [`/data`](data/) as plain JSON (CC0). No key, no rate limit. Build your own bot, widget, or app on top of it.
+- **Open data layer.** Everything lives in [`packages/data/data`](packages/data/data/) as plain JSON (CC0), also published as `@kickoff26/data`. No key, no rate limit. Build your own bot, widget, or app on top of it.
 
 ## Quickstart
 
@@ -36,15 +36,17 @@ npm run validate:data    # 104 matches / 48 teams / 12 groups / 16 venues, free-
 
 ## Use our data
 
-The whole product is `/data/*.json`, public domain. Grab any of it directly:
+The whole product is plain JSON, public domain — `npm i @kickoff26/data` for typed loaders, or grab any file directly:
 
 | File | What's in it |
 |---|---|
-| [`data/matches.json`](data/matches.json) | All 104 matches — FIFA match number as `id`, `kickoff_utc`, stage, venue, teams (slugs + knockout placeholders) |
-| [`data/teams.json`](data/teams.json) | 48 teams — slug `id`, name, code, flag, FIFA rank, group, confederation |
-| [`data/groups.json`](data/groups.json) | The 12 groups A–L |
-| [`data/venues.json`](data/venues.json) | 16 stadiums — city, country, capacity, IANA timezone |
-| [`data/broadcasts.json`](data/broadcasts.json) | Where to watch per country, free options first |
+| [`matches.json`](packages/data/data/matches.json) | All 104 matches — FIFA match number as `id`, `kickoff_utc`, stage, venue, teams (slugs + knockout placeholders) |
+| [`teams.json`](packages/data/data/teams.json) | 48 teams — slug `id`, name, code, flag, FIFA rank, group, confederation |
+| [`groups.json`](packages/data/data/groups.json) | The 12 groups A–L |
+| [`venues.json`](packages/data/data/venues.json) | 16 stadiums — city, country, capacity, IANA timezone |
+| [`broadcasts.json`](packages/data/data/broadcasts.json) | Where to watch per country, free options first |
+
+The domain logic (timezone math, `.ics`, FIFA standings, label rendering) is the framework-free [`@kickoff26/core`](packages/core/) package — usable in any JS runtime, no React required.
 
 Kickoffs are stored as UTC ISO (`2026-06-11T19:00:00Z`) — convert to any timezone at render time with `Intl.DateTimeFormat`. Knockout matches reference earlier ones by FIFA number (`W74` = winner of match 74, `L101` = loser of match 101) and group slots by position (`1A`, `2B`, `3A/B/C/D/F`).
 
@@ -52,7 +54,7 @@ There's also a zero-dependency **[MCP server](mcp/)** over the same data, so AI 
 
 ## Contributing
 
-The biggest way to help: **add your country to "where to watch."** Most countries aren't seeded yet, and it's a 5-minute PR — copy [`data/broadcasts.template.json`](data/broadcasts.template.json), fill in your free-to-air and official channels, link the source. See [CONTRIBUTING.md](CONTRIBUTING.md) and the [`good first issue`](https://github.com/faraz152/kickoff26/labels/good%20first%20issue) list.
+The biggest way to help: **add your country to "where to watch."** Most countries aren't seeded yet, and it's a 5-minute PR — copy [`broadcasts.template.json`](packages/data/data/broadcasts.template.json), fill in your free-to-air and official channels, link the source. See [CONTRIBUTING.md](CONTRIBUTING.md) and the [`good first issue`](https://github.com/faraz152/kickoff26/labels/good%20first%20issue) list.
 
 Other open work: the knockout bracket simulator, fan-zone map, more languages, the third-place Annex table. All in [.github/GOOD_FIRST_ISSUES.md](.github/GOOD_FIRST_ISSUES.md).
 

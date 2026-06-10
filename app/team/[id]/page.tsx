@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getTeams, getTeam, getMatches, getVenues, getBroadcasts, matchesForTeam } from '@/lib/data';
-import { tokenLabel, matchContext } from '@/lib/labels';
-import { toEvents, teamMap, venueMap } from '@/lib/calendar';
+import { getTeams, getTeam, getMatches, getVenues, getBroadcasts, matchesForTeam } from '@kickoff26/data';
+import { tokenLabel, matchContext } from '@kickoff26/core';
+import { toEvents, teamMap, venueMap } from '@kickoff26/core';
 import LocalTime from '@/components/LocalTime';
 import AddToCalendar from '@/components/AddToCalendar';
 import WhereToWatch from '@/components/WhereToWatch';

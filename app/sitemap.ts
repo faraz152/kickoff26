@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
-import { getTeams, getMatches, getVenues } from '@/lib/data';
-import { SITE_URL } from '@/lib/site';
+import { getTeams, getMatches, getVenues } from '@kickoff26/data';
+import { SITE_URL } from '@kickoff26/core';
 
 export const dynamic = 'force-static';
 

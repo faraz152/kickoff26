@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { getMatches, getTeams } from '@/lib/data';
-import { tokenLabel } from '@/lib/labels';
-import { teamMap } from '@/lib/calendar';
+import { getMatches, getTeams } from '@kickoff26/data';
+import { tokenLabel } from '@kickoff26/core';
+import { teamMap } from '@kickoff26/core';
 import LocalTime from '@/components/LocalTime';
-import type { Match, Stage } from '@/lib/types';
+import type { Match, Stage } from '@kickoff26/core';
 
 export const metadata = { title: 'Knockout bracket — kickoff26' };
 

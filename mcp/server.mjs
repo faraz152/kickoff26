@@ -1,25 +1,12 @@
 #!/usr/bin/env node
 // kickoff26 MCP server — read-only Model Context Protocol access to the open World Cup 2026 dataset,
 // so an AI assistant can answer "when does my team play (in my timezone)" and "where can I watch free
-// in my country." Zero dependencies: it speaks MCP's stdio wire protocol directly (newline-delimited
-// JSON-RPC 2.0), matching the project's forkable, no-build-step ethos.
+// in my country." No MCP SDK: it speaks the stdio wire protocol directly (newline-delimited JSON-RPC
+// 2.0). The dataset comes from the @kickoff26/data package (the same data the website is built from).
 //
-// Data is read from KICKOFF_DATA_DIR, or ../data relative to this file. Run it with:
-//   node mcp/server.mjs
-// and wire it into an MCP client (see mcp/README.md).
+// Run it with `node mcp/server.mjs` and wire it into an MCP client (see mcp/README.md).
 
-import { readFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const DATA = process.env.KICKOFF_DATA_DIR || join(dirname(fileURLToPath(import.meta.url)), '..', 'data');
-const load = (f) => JSON.parse(readFileSync(join(DATA, f), 'utf8'));
-
-const matches = load('matches.json');
-const teams = load('teams.json');
-const groups = load('groups.json');
-const venues = load('venues.json');
-const broadcasts = load('broadcasts.json');
+import { matches, teams, groups, venues, broadcasts } from '@kickoff26/data';
 
 const teamById = new Map(teams.map((t) => [t.id, t]));
 const venueById = new Map(venues.map((v) => [v.id, v]));

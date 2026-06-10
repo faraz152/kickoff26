@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import type { Broadcasts, Channel } from '@/lib/types';
+import type { Broadcasts, Channel } from '@kickoff26/core';
 
 const KEY = 'kickoff26-country';
 const TYPE_RANK: Record<Channel['type'], number> = {

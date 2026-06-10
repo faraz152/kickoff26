@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { getMatches, getTeams, getVenues } from '@/lib/data';
-import { tokenLabel, matchContext } from '@/lib/labels';
+import { getMatches, getTeams, getVenues } from '@kickoff26/data';
+import { tokenLabel, matchContext } from '@kickoff26/core';
 import LocalTime from '@/components/LocalTime';
 
 export default function Home() {

@@ -1,0 +1,27 @@
+{
+  "name": "@kickoff26/core",
+  "version": "0.1.0",
+  "description": "Framework-free World Cup 2026 domain engine — timezone math, .ics export, FIFA standings, label/placeholder rendering.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "dev": "tsup src/index.ts --format esm --dts --watch"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.5.3"
+  }
+}

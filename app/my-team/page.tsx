@@ -1,4 +1,4 @@
-import { getBroadcasts, getMatches, getTeams, getVenues } from '@/lib/data';
+import { getBroadcasts, getMatches, getTeams, getVenues } from '@kickoff26/data';
 import MyTeam from '@/components/MyTeam';
 
 export const metadata = { title: 'My Team — kickoff26' };

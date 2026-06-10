@@ -1,0 +1,29 @@
+name: publish
+
+# Publishes @kickoff26/core + @kickoff26/data to npm so downstream apps (incl. the private one) can
+# consume the shared engine + open data. Triggered by a version tag (e.g. `git tag v0.1.0 && git push
+# --tags`). Bump the package versions first. Needs an NPM_TOKEN repo secret with publish rights to the
+# @kickoff26 scope. Core publishes before data (data depends on it).
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm run build:packages
+      - run: npm publish -w @kickoff26/core --access public
+      - run: npm publish -w @kickoff26/data --access public

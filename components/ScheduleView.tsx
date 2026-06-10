@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import type { Match, Team, Venue } from '@/lib/types';
-import { formatTime, formatDayHeading, groupByLocalDate } from '@/lib/tz';
-import { tokenLabel, matchContext } from '@/lib/labels';
+import type { Match, Team, Venue } from '@kickoff26/core';
+import { formatTime, formatDayHeading, groupByLocalDate } from '@kickoff26/core';
+import { tokenLabel, matchContext } from '@kickoff26/core';
 import { useTimezone } from './TimezoneContext';
 
 type StageFilter = 'all' | 'group' | 'ko';

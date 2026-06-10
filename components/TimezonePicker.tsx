@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { allZones } from '@/lib/tz';
+import { allZones } from '@kickoff26/core';
 import { useTimezone } from './TimezoneContext';
 
 export default function TimezonePicker() {

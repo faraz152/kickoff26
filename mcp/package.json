@@ -10,5 +10,8 @@
   },
   "files": [
     "server.mjs"
-  ]
+  ],
+  "dependencies": {
+    "@kickoff26/data": "^0.1.0"
+  }
 }

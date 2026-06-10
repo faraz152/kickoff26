@@ -1,0 +1,36 @@
+{
+  "name": "@kickoff26/data",
+  "version": "0.1.0",
+  "description": "Open (CC0) FIFA World Cup 2026 dataset — 104 matches, 48 teams, 12 groups, 16 venues, free-first broadcasts — with typed accessors. Built from openfootball.",
+  "license": "CC0-1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*.json": "./data/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "data"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "build:data": "node scripts/build-data.mjs",
+    "build:data:offline": "node scripts/build-data.mjs --offline",
+    "validate": "node scripts/validate-data.mjs",
+    "update:results": "node scripts/update-results.mjs"
+  },
+  "dependencies": {
+    "@kickoff26/core": "^0.1.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.5.3"
+  }
+}

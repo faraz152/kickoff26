@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import type { Match, Team } from '@/lib/types';
-import { computeStandings } from '@/lib/standings';
+import type { Match, Team } from '@kickoff26/core';
+import { computeStandings } from '@kickoff26/core';
 
 // Server component — standings are computed at build (and rebuilt when results commit). No TZ needed.
 export default function GroupTable({ id, teams, matches }: { id: string; teams: Team[]; matches: Match[] }) {

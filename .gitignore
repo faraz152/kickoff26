@@ -9,6 +9,9 @@ out/
 next-env.d.ts
 *.tsbuildinfo
 
+# package build artifacts (built by `npm run build:packages`, published from CI)
+packages/*/dist/
+
 # build cache
 scripts/.cache/
 

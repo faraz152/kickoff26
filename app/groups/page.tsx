@@ -1,4 +1,4 @@
-import { getGroups, getMatches, getTeams } from '@/lib/data';
+import { getGroups, getMatches, getTeams } from '@kickoff26/data';
 import GroupTable from '@/components/GroupTable';
 
 export const metadata = { title: 'Groups & standings — kickoff26' };

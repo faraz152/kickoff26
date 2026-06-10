@@ -10,8 +10,8 @@ The promise — "watch free" — is delivered by surfacing every *legal* free op
 
 ## Add your country (5-minute PR)
 
-1. Open [`data/broadcasts.json`](data/broadcasts.json).
-2. Copy the shape from [`data/broadcasts.template.json`](data/broadcasts.template.json), keyed by your ISO-3166 alpha-2 code (`GB`, `BR`, `IN`…).
+1. Open [`broadcasts.json`](packages/data/data/broadcasts.json).
+2. Copy the shape from [`broadcasts.template.json`](packages/data/data/broadcasts.template.json), keyed by your ISO-3166 alpha-2 code (`GB`, `BR`, `IN`…).
 3. List **free options first**: `free-tv`, then `free-stream`, then `radio`. Put any `paid-tv` / `paid-stream` after them.
 4. Every channel needs a `source` — the broadcaster's **own** page, not an aggregator or a blog.
 5. Language tags are ISO-639-1 (`en`, `pt`, `ar`).
@@ -39,7 +39,7 @@ npm run build          # static export to out/
 npm run validate:data  # data integrity checks
 ```
 
-The site is a Next.js static export. Pages live in `app/`, components in `components/`, shared logic in `lib/`. The data is built from openfootball by `scripts/build-data.mjs`; don't hand-edit `matches.json` / `teams.json` / `groups.json` / `venues.json` — change the script and re-run `npm run build:data`. `broadcasts.json` is hand-maintained (that's the community part).
+The site is a Next.js static export in an npm-workspaces monorepo. Pages live in `app/`, components in `components/`; the shared framework-free logic is the `@kickoff26/core` package (`packages/core/`) and the data is `@kickoff26/data` (`packages/data/`). The data is built from openfootball by `packages/data/scripts/build-data.mjs`; don't hand-edit `matches.json` / `teams.json` / `groups.json` / `venues.json` — change the script and re-run `npm run build:data`. `broadcasts.json` is hand-maintained (that's the community part).
 
 ## PRs and commits
 

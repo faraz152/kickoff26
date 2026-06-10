@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-import { detectZone } from '@/lib/tz';
+import { detectZone } from '@kickoff26/core';
 
 const KEY = 'kickoff26-tz';
 

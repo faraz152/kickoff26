@@ -79,13 +79,3 @@ export function buildCalendar(events: IcsEvent[], reminderMin = 30): string {
   const body = events.flatMap((e) => eventLines(e, reminderMin));
   return [...head, ...body, 'END:VCALENDAR'].map(fold).join(CRLF) + CRLF;
 }
-
-export function downloadCalendar(events: IcsEvent[], filename = 'kickoff26.ics', reminderMin = 30): void {
-  const blob = new Blob([buildCalendar(events, reminderMin)], { type: 'text/calendar;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
-}
