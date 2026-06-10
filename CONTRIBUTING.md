@@ -1,6 +1,6 @@
 # Contributing to kickoff26
 
-Thanks for helping out. The single most useful thing you can do is **add where-to-watch info for your country** — that's the dataset that makes this project worth using, and it's the one thing a maintainer in another country can't get right alone.
+Thanks for helping out. The single most useful thing you can do is **confirm whether a broadcaster in your country is free or paid** — we now list FIFA's official broadcasters for 115 countries, but most aren't yet flagged free vs paid, and that's the one thing a maintainer in another country can't get right alone.
 
 ## The one hard rule: no pirate streams
 
@@ -8,26 +8,24 @@ We only ever list **official rights-holders** — free-to-air TV, official free 
 
 The promise — "watch free" — is delivered by surfacing every *legal* free option first. That's the actual gap nobody fills well, and it's the part that can't be taken down.
 
-## Add your country (5-minute PR)
+## How the broadcast data works
 
-1. Open [`broadcasts.json`](packages/data/data/broadcasts.json).
-2. Copy the shape from [`broadcasts.template.json`](packages/data/data/broadcasts.template.json), keyed by your ISO-3166 alpha-2 code (`GB`, `BR`, `IN`…).
-3. List **free options first**: `free-tv`, then `free-stream`, then `radio`. Put any `paid-tv` / `paid-stream` after them.
-4. Every channel needs a `source` — the broadcaster's **own** page, not an aggregator or a blog.
-5. Language tags are ISO-639-1 (`en`, `pt`, `ar`).
-6. **Verify the free/paid flag** against the broadcaster before you submit. Rights deals for 2026 are still being announced; a wrong flag is the one thing that breaks trust in this feature. If you're not sure, add a `note` saying so.
-7. Run `npm run validate:data` — it checks ISO codes, free-first ordering, and that nothing looks like a pirate link.
+`broadcasts.json` is **generated** — don't hand-edit it. It's built by [`build-broadcasts.mjs`](packages/data/scripts/build-broadcasts.mjs) from FIFA's official where-to-watch feed (the authoritative rights-holder list), then [`channel-classify.mjs`](packages/data/scripts/channel-classify.mjs) tags each channel `free` / `paid` / `unknown`. FIFA's feed doesn't say free or paid, so anything we can't confidently identify shows honestly as "official broadcaster — check the site".
 
-```jsonc
-"NG": {
-  "country": "Nigeria",
-  "channels": [
-    { "name": "NTA", "type": "free-tv", "languages": ["en"], "cost": "free",
-      "url": "https://www.nta.ng/", "source": "https://www.nta.ng/", "note": "selected matches" },
-    { "name": "SuperSport (DStv)", "type": "paid-tv", "languages": ["en"], "cost": "paid",
-      "url": "https://supersport.com/", "source": "https://supersport.com/" }
-  ]
-}
+## Confirm a broadcaster's free/paid (5-minute PR)
+
+1. Open the watch page, pick a country, and find a channel tagged **"Official broadcaster"** (unconfirmed) that you know.
+2. Verify free vs paid on the broadcaster's **own** site (not an aggregator or blog).
+3. Add a rule to [`channel-classify.mjs`](packages/data/scripts/channel-classify.mjs) — an ordered `[pattern, cost, type]` entry. Match the channel name; pick `free`/`paid` and a `type` (`free-tv`, `free-stream`, `paid-tv`, `paid-stream`).
+4. Re-run `npm run build:broadcasts` then `npm run validate:data` (checks ISO codes, free→unknown→paid ordering, no pirate links).
+5. **A wrong free/paid flag is the one thing that breaks trust here** — if you're not certain, leave it `unknown` rather than guess.
+
+For a country FIFA's feed omits, add it to [`broadcasts.seed.json`](packages/data/scripts/broadcasts.seed.json) (same channel shape, keyed by ISO-3166 alpha-2).
+
+```js
+// in channel-classify.mjs RULES — first match wins
+[/\bnta\b/i, 'free', 'free-tv'],            // Nigeria: NTA is free-to-air
+[/supersport|\bdstv\b/i, 'paid', 'paid-tv'], // SuperSport/DStv is subscription
 ```
 
 ## Dev setup

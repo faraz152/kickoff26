@@ -12,8 +12,9 @@ export default function WatchPage() {
       <h1>Where to watch — free first</h1>
       <p className="muted">
         Pick your country and we’ll show every <strong>legal free</strong> option first — free-to-air TV and official
-        free streams — then paid. {count} countries seeded so far.{' '}
-        <a href="https://github.com/faraz152/kickoff26/blob/main/CONTRIBUTING.md">Add yours →</a>
+        free streams — then paid. Official broadcasters for {count} countries, from FIFA’s own list; help us confirm
+        which are free.{' '}
+        <a href="https://github.com/faraz152/kickoff26/blob/main/CONTRIBUTING.md">Contribute →</a>
       </p>
       <WhereToWatch broadcasts={broadcasts} />
     </>

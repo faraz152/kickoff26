@@ -57,7 +57,7 @@ Status of kickoff26 against the master plan in [`.plan/`](.plan/). Last updated 
 Contributor-driven, none started:
 
 **Mass-contribution (drives stars):**
-- ⏳ `add-broadcasts: <country>` — ~180 countries still unseeded (the main growth lever). Hand-maintained by design: each entry needs per-country verification against the official broadcaster (legal/free-first hard-line), so it's human-PR territory, not auto-generated.
+- ✅ **Where-to-watch now covers 115 countries** — `build-broadcasts.mjs` pulls FIFA's official where-to-watch feed (`api.fifa.com/api/v3/watch/season/285023`, 112 countries) + 3 seeded (IN/ZA/NG), classified by `channel-classify.mjs` into free/paid/unknown (~36% confidently classified; the rest shown honestly as "official broadcaster — check the site"). The contributor lever shifts from "add your country" to **"confirm an `unknown` channel's free/paid"** (edit the classifier with a source).
 - ⏳ `add-i18n: <language>` — team/UI translations, Arabic/RTL especially. **Blocked on an architecture decision:** the app prerenders English server-side (static export), so i18n needs either build-time per-locale routing (`/es/…`, `/ar/…`, more pages + SEO) or a client re-render layer (like the TZ swap). Pick the approach before building the `data/i18n/<lang>.json` framework.
 
 **Features:**

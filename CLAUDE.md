@@ -21,8 +21,8 @@ Root data scripts delegate to the `@kickoff26/data` workspace. CI (`.github/work
 
 - `packages/core/` → **`@kickoff26/core`** — framework-free engine: `tz.ts` (Intl timezone + date math), `ics.ts` (RFC 5545 .ics string), `labels.ts` (team/placeholder display), `standings.ts` (FIFA tiebreakers), `calendar.ts` (matches→.ics events), `types.ts`, `site.ts`. No DOM/React. Built with tsup → `dist/` (gitignored).
 - `packages/data/` → **`@kickoff26/data`** — the CC0 dataset + typed loaders (`getMatches`, …) + the ETL/validate/live scripts.
-  - `packages/data/data/*.json` — the product's heart. `matches/teams/groups/venues.json` are **generated** (don't hand-edit; change `packages/data/scripts/build-data.mjs` and rebuild). `broadcasts.json` is **hand-maintained** — the community part.
-  - `packages/data/scripts/` — `build-data.mjs` (openfootball ETL, embeds team/venue metadata), `validate-data.mjs` (zero-dep validator: counts 104/48/12/16, schema, free-first, pirate guard), `update-results.mjs` (live score updater + placeholder resolution).
+  - `packages/data/data/*.json` — the product's heart, all **generated** (don't hand-edit). `matches/teams/groups/venues.json` ← `build-data.mjs` (openfootball). `broadcasts.json` ← `build-broadcasts.mjs` (FIFA's official where-to-watch feed, **115 countries**); to change it, edit `channel-classify.mjs` (free/paid) or `broadcasts.seed.json` (countries FIFA omits — IN/ZA/NG), then rebuild.
+  - `packages/data/scripts/` — `build-data.mjs` (openfootball ETL), `build-broadcasts.mjs` (FIFA watch ETL → broadcasts) + `channel-classify.mjs` (free/paid overlay) + `broadcasts.seed.json` (gap-fill), `validate-data.mjs` (zero-dep validator: counts 104/48/12/16, schema, free-first, pirate guard), `update-results.mjs` (live score updater + placeholder resolution).
 - `app/` + `components/` — the **OSS web app**, consuming the two packages via `@kickoff26/core` / `@kickoff26/data` (only `@/components/*` stays a local alias). Pages: `/`, `/schedule`, `/groups`, `/bracket`, `/watch`, `/my-team`, `/venue`, `/match/[id]`, `/team/[id]`, `/venue/[id]`.
 - `mcp/` — MCP server over `@kickoff26/data`.
 
@@ -40,7 +40,7 @@ Static export prerenders with zone `UTC` (server can't know the user's zone), th
 
 ## The legal boundary (non-negotiable)
 
-`broadcasts.json` lists **official rights-holders only** — free-to-air, official free streams, FIFA+, public broadcasters, official paid. **Never** unlicensed IPTV / restream links. Pirate links → DMCA → repo deleted → project dead. The validator rejects obvious restream domains; reviewers reject the rest. Free options always sort before paid.
+`broadcasts.json` lists **official rights-holders only** — sourced straight from FIFA's own where-to-watch feed (the authoritative list), classified by `channel-classify.mjs` into free / paid / **`unknown`** (FIFA-listed but free/paid not yet confirmed — shown honestly, never guessed). **Never** unlicensed IPTV / restream links. Pirate links → DMCA → repo deleted → project dead. The validator rejects obvious restream domains; reviewers reject the rest. Sort order is free → unknown → paid.
 
 ## Conventions
 

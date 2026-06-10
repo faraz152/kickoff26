@@ -54,7 +54,7 @@ There's also a zero-dependency **[MCP server](mcp/)** over the same data, so AI 
 
 ## Contributing
 
-The biggest way to help: **add your country to "where to watch."** Most countries aren't seeded yet, and it's a 5-minute PR — copy [`broadcasts.template.json`](packages/data/data/broadcasts.template.json), fill in your free-to-air and official channels, link the source. See [CONTRIBUTING.md](CONTRIBUTING.md) and the [`good first issue`](https://github.com/faraz152/kickoff26/labels/good%20first%20issue) list.
+The biggest way to help: **confirm whether a broadcaster in your country is free or paid.** Where-to-watch covers 115 countries from FIFA's official feed, but most channels aren't flagged free vs paid yet — pick one you know, verify on its own site, and add a one-line rule to [`channel-classify.mjs`](packages/data/scripts/channel-classify.mjs). It's a 5-minute PR. See [CONTRIBUTING.md](CONTRIBUTING.md) and the [`good first issue`](https://github.com/faraz152/kickoff26/labels/good%20first%20issue) list.
 
 Other open work: the knockout bracket simulator, fan-zone map, more languages, the third-place Annex table. All in [.github/GOOD_FIRST_ISSUES.md](.github/GOOD_FIRST_ISSUES.md).
 

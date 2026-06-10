@@ -608,6 +608,10 @@ h2 {
   background: var(--surface-2);
   color: var(--muted);
 }
+.tag-unknown {
+  background: var(--surface-2);
+  color: var(--gold);
+}
 .chan-lang {
   color: var(--muted);
   font-size: 0.8rem;

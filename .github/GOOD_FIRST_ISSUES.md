@@ -4,7 +4,7 @@ These are the open pieces, roughly easiest-first. Open an issue before starting 
 
 ## Mass-contribution (no code, big impact)
 
-- **Add your country's broadcasts** (`good first issue`, `data`) — one PR per missing country. Free-to-air + official channels, free-first, official sources. See [CONTRIBUTING.md](../CONTRIBUTING.md). This is the highest-value contribution and there are ~180 countries to go.
+- **Confirm a broadcaster's free/paid** (`good first issue`, `data`) — where-to-watch now covers 115 countries from FIFA's official feed, but only ~36% of channels are confidently flagged free vs paid; the rest show as "official broadcaster". Pick a channel you know, verify on its own site, and add a rule to [`channel-classify.mjs`](../packages/data/scripts/channel-classify.mjs) with the source. (For a country FIFA omits, add it to `broadcasts.seed.json`.)
 - **Translate team / UI names** (`good first issue`, `i18n`) — add a `packages/data/data/i18n/<lang>.json` with team display names and the handful of UI strings. Arabic/RTL especially wanted.
 - **Verify a seeded country** (`good first issue`, `data`) — pick a country already in `broadcasts.json`, confirm each free/paid flag against the broadcaster's own site for 2026, and fix or remove the `note`.
 

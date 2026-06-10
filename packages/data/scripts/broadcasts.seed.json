@@ -1,0 +1,82 @@
+{
+  "IN": {
+    "country": "India",
+    "channels": [
+      {
+        "name": "JioHotstar",
+        "type": "free-stream",
+        "languages": [
+          "en",
+          "hi"
+        ],
+        "cost": "free",
+        "url": "https://www.hotstar.com/in",
+        "source": "https://www.hotstar.com/in",
+        "note": "mobile free for selected matches in past editions — verify 2026 rights"
+      },
+      {
+        "name": "Sony Sports Network",
+        "type": "paid-tv",
+        "languages": [
+          "en",
+          "hi"
+        ],
+        "cost": "paid",
+        "url": "https://www.sonyliv.com/",
+        "source": "https://www.sonyliv.com/"
+      }
+    ]
+  },
+  "ZA": {
+    "country": "South Africa",
+    "channels": [
+      {
+        "name": "SABC",
+        "type": "free-tv",
+        "languages": [
+          "en"
+        ],
+        "cost": "free",
+        "url": "https://www.sabc.co.za/",
+        "source": "https://www.sabcsport.com/",
+        "note": "public broadcaster — selected matches free-to-air"
+      },
+      {
+        "name": "SuperSport (DStv)",
+        "type": "paid-tv",
+        "languages": [
+          "en"
+        ],
+        "cost": "paid",
+        "url": "https://supersport.com/",
+        "source": "https://supersport.com/"
+      }
+    ]
+  },
+  "NG": {
+    "country": "Nigeria",
+    "channels": [
+      {
+        "name": "NTA",
+        "type": "free-tv",
+        "languages": [
+          "en"
+        ],
+        "cost": "free",
+        "url": "https://www.nta.ng/",
+        "source": "https://www.nta.ng/",
+        "note": "national broadcaster — selected matches free-to-air"
+      },
+      {
+        "name": "SuperSport (DStv)",
+        "type": "paid-tv",
+        "languages": [
+          "en"
+        ],
+        "cost": "paid",
+        "url": "https://supersport.com/",
+        "source": "https://supersport.com/"
+      }
+    ]
+  }
+}

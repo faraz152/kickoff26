@@ -38,16 +38,19 @@ export interface Venue {
   capacity: number;
 }
 
-export type ChannelType = 'free-tv' | 'free-stream' | 'radio' | 'paid-tv' | 'paid-stream';
+// 'unknown' = FIFA lists this as an official broadcaster but we haven't confirmed free vs paid yet.
+export type ChannelType = 'free-tv' | 'free-stream' | 'radio' | 'paid-tv' | 'paid-stream' | 'unknown';
 
 export interface Channel {
   name: string;
   type: ChannelType;
   languages: string[];
-  cost: 'free' | 'paid';
+  cost: 'free' | 'paid' | 'unknown';
   url: string;
   source?: string;
   note?: string;
+  idChannel?: string; // FIFA channel id — stable key for the classification overlay
+  logo?: string;
 }
 
 export interface BroadcastMarket {

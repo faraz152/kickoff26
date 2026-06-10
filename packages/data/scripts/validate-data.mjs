@@ -77,9 +77,10 @@ for (const v of venues) {
   fail(!/^[A-Za-z]+\/[A-Za-z_]+/.test(v.tz), `${at}: bad IANA tz "${v.tz}"`);
 }
 
-// broadcasts: ISO keys, free-first ordering, official sources, and a hard no-pirate guard
-const TYPE_RANK = { 'free-tv': 0, 'free-stream': 1, 'radio': 2, 'paid-tv': 3, 'paid-stream': 4 };
-const COST = new Set(['free', 'paid']);
+// broadcasts: ISO keys, free→unknown→paid ordering, official sources, and a hard no-pirate guard.
+// 'unknown' = FIFA-listed official broadcaster whose free/paid status we haven't confirmed.
+const TYPE_RANK = { 'free-tv': 0, 'free-stream': 1, 'radio': 2, 'unknown': 3, 'paid-tv': 4, 'paid-stream': 5 };
+const COST = new Set(['free', 'paid', 'unknown']);
 const PIRATE = /(pirate|iptv|reddit|telegram|crackstream|sportsurge|totalsportek|rojadirecta|streameast|t\.me\/)/i;
 for (const [cc, entry] of Object.entries(broadcasts)) {
   const at = `broadcasts.${cc}`;
@@ -90,9 +91,10 @@ for (const [cc, entry] of Object.entries(broadcasts)) {
   for (const ch of entry.channels || []) {
     const cat = `${at} "${ch.name}"`;
     fail(!(ch.type in TYPE_RANK), `${cat}: bad type "${ch.type}"`);
-    fail(!COST.has(ch.cost), `${cat}: cost must be free|paid`);
+    fail(!COST.has(ch.cost), `${cat}: cost must be free|paid|unknown`);
     fail(ch.type?.startsWith('free') && ch.cost !== 'free', `${cat}: free type with non-free cost`);
     fail(ch.type?.startsWith('paid') && ch.cost !== 'paid', `${cat}: paid type with non-paid cost`);
+    fail((ch.type === 'unknown') !== (ch.cost === 'unknown'), `${cat}: 'unknown' type and cost must agree`);
     fail(!Array.isArray(ch.languages) || !ch.languages.every((l) => /^[a-z]{2}$/.test(l)), `${cat}: languages must be ISO-639-1`);
     fail(!/^https?:\/\//.test(ch.url || ''), `${cat}: missing/invalid url`);
     warn(!ch.source, `${cat}: no official source link`);

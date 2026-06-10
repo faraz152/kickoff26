@@ -8,13 +8,15 @@ const TYPE_RANK: Record<Channel['type'], number> = {
   'free-tv': 0,
   'free-stream': 1,
   radio: 2,
-  'paid-tv': 3,
-  'paid-stream': 4,
+  unknown: 3,
+  'paid-tv': 4,
+  'paid-stream': 5,
 };
 const TYPE_LABEL: Record<Channel['type'], string> = {
   'free-tv': 'Free-to-air TV',
   'free-stream': 'Free stream',
   radio: 'Radio',
+  unknown: 'Official broadcaster',
   'paid-tv': 'Paid TV',
   'paid-stream': 'Paid stream',
 };
@@ -59,6 +61,7 @@ export default function WhereToWatch({ broadcasts, compact = false }: { broadcas
     [market],
   );
   const free = channels.filter((c) => c.cost === 'free');
+  const unconfirmed = channels.filter((c) => c.cost === 'unknown');
   const paid = channels.filter((c) => c.cost === 'paid');
 
   return (
@@ -90,8 +93,20 @@ export default function WhereToWatch({ broadcasts, compact = false }: { broadcas
         </div>
       )}
 
-      {market && free.length === 0 && (
+      {market && free.length === 0 && unconfirmed.length === 0 && (
         <p className="muted">No confirmed free-to-air option in {market.country} yet — paid options below.</p>
+      )}
+
+      {market && unconfirmed.length > 0 && (
+        <div className="watch-group">
+          <h4 className="watch-head">📺 Official broadcasters{compact ? '' : ` in ${market.country}`}</h4>
+          <ul className="chan-list">
+            {unconfirmed.map((c) => (
+              <ChannelRow key={c.name} c={c} />
+            ))}
+          </ul>
+          <p className="muted small">Listed by FIFA as official — check the broadcaster’s site for whether it’s free or paid.</p>
+        </div>
       )}
 
       {market && paid.length > 0 && (
@@ -122,7 +137,9 @@ function ChannelRow({ c }: { c: Channel }) {
       <a href={c.url} target="_blank" rel="noopener noreferrer" className="chan-name">
         {c.name}
       </a>
-      <span className={c.cost === 'free' ? 'tag tag-free' : 'tag tag-paid'}>{TYPE_LABEL[c.type]}</span>
+      <span className={`tag ${c.cost === 'free' ? 'tag-free' : c.cost === 'paid' ? 'tag-paid' : 'tag-unknown'}`}>
+        {TYPE_LABEL[c.type]}
+      </span>
       <span className="chan-lang">{c.languages.map((l) => l.toUpperCase()).join(' · ')}</span>
       {c.note && <span className="chan-note muted">{c.note}</span>}
     </li>

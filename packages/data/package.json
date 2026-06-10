@@ -26,6 +26,8 @@
     "build": "tsup src/index.ts --format esm --dts --clean",
     "build:data": "node scripts/build-data.mjs",
     "build:data:offline": "node scripts/build-data.mjs --offline",
+    "build:broadcasts": "node scripts/build-broadcasts.mjs",
+    "build:broadcasts:offline": "node scripts/build-broadcasts.mjs --offline",
     "validate": "node scripts/validate-data.mjs",
     "update:results": "node scripts/update-results.mjs"
   },

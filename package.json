@@ -17,6 +17,7 @@
     "lint": "next lint",
     "build:data": "npm -w @kickoff26/data run build:data",
     "build:data:offline": "npm -w @kickoff26/data run build:data:offline",
+    "build:broadcasts": "npm -w @kickoff26/data run build:broadcasts",
     "validate:data": "npm -w @kickoff26/data run validate",
     "update:results": "npm -w @kickoff26/data run update:results",
     "mcp": "node mcp/server.mjs"
