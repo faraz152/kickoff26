@@ -61,7 +61,7 @@ Contributor-driven, none started:
 - ⏳ `add-i18n: <language>` — team/UI translations, Arabic/RTL especially. **Blocked on an architecture decision:** the app prerenders English server-side (static export), so i18n needs either build-time per-locale routing (`/es/…`, `/ar/…`, more pages + SEO) or a client re-render layer (like the TZ swap). Pick the approach before building the `data/i18n/<lang>.json` framework.
 
 **Features:**
-- ◐ Auto-update results after each match — `scripts/update-results.mjs` + `update-live.yml` cron **done** (self-gates to live windows, patches scores, resolves `1X`/`2X` + `W##`/`L##`). ⏳ Remaining: source FIFA's 495-row third-place Annex table → `data/thirds-annex.json` to resolve the eight `3A/B/C/D/F` slots, and confirm the live API response shapes on matchday.
+- ◐ Auto-update results after each match — `update-results.mjs` + `update-live.yml` cron **done**, now wired to a **verified** live source: TheSportsDB's FIFA World Cup feed (league 4429, keyless), whose team names all map to our slugs and whose schedule matches our fixtures (confirmed against the real API — the opener resolves correctly). Self-gates to live windows, robust status map (NS/FT/AET/PEN/1H…), patches scores, resolves `1X`/`2X` + `W##`/`L##`. ⏳ Remaining: source FIFA's 495-row third-place Annex table → `thirds-annex.json` for the eight `3A/B/C/D/F` slots.
 - ✅ Offline PWA — service worker caches the app shell + visited pages (data is baked into each page, so no separate `/data` caching needed). Manifest already in place.
 - ◐ Resolve knockout placeholders to real teams once groups finish — group + winner/loser slots done in the updater; third-place Annex assignment still open.
 - ⏳ Knockout bracket simulator ("predict & share").

@@ -197,35 +197,58 @@ function applyResults(matches, results, resolve, log) {
 }
 
 // --- providers ------------------------------------------------------------------------------------
-// Network is isolated here so the engine above is fully testable offline (--mock). The free tiers are
-// tiny: poll only when something is live, cache, and fall through on failure. NOTE: confirm each
-// provider's exact response shape against a live fixture on matchday — parsing is best-effort.
+// Verified against TheSportsDB's FIFA World Cup feed (league 4429): its team-name strings all resolve
+// to our slugs and its schedule carries our exact fixtures. TheSportsDB is keyless and primary;
+// balldontlie is a secondary used only when LIVE_API_KEY is set. We query only the date(s) that have a
+// match in the live window, so an idle run stays cheap. Network is isolated here — the engine above is
+// fully testable offline via --mock.
+const TSDB = 'https://www.thesportsdb.com/api/v1/json/3';
+const WC_LEAGUE = '4429';
+const num = (v) => (v == null || v === '' ? null : Number(v));
+
+// TheSportsDB strStatus → our status. NS/blank/postponed = scheduled; FT/AET/PEN/"Match Finished" =
+// finished; anything else mid-match (1H, HT, 2H, ET, P, BT, …) = live.
+function mapStatus(s) {
+  const v = (s || '').trim();
+  if (!v || /^(NS|Not Started|TBD|Postponed|PPD|Cancelled|CANC|Time to be defined)$/i.test(v)) return 'scheduled';
+  if (/^(FT|AET|AP|PEN|FT_PEN|Match Finished|After Extra Time|Penalties)$/i.test(v)) return 'finished';
+  return 'live';
+}
+
 async function fetchLive(pollable, resolve, log) {
   const want = new Set();
   for (const m of pollable) { want.add(`${m.team1}|${m.team2}`); want.add(`${m.team2}|${m.team1}`); }
+  const dates = [...new Set(pollable.map((m) => m.kickoff_utc.slice(0, 10)))]; // UTC dates to query
 
   const providers = [
-    async () => { // balldontlie FIFA
+    async () => { // TheSportsDB — keyless primary, filtered to the FIFA World Cup league
+      const out = [];
+      for (const d of dates) {
+        const res = await fetch(`${TSDB}/eventsday.php?d=${d}&s=Soccer`);
+        if (!res.ok) throw new Error(`thesportsdb HTTP ${res.status}`);
+        const { events } = await res.json();
+        for (const e of events || []) {
+          if (e.idLeague !== WC_LEAGUE) continue;
+          out.push({
+            team1: resolve(e.strHomeTeam), team2: resolve(e.strAwayTeam),
+            ft: [num(e.intHomeScore), num(e.intAwayScore)],
+            status: mapStatus(e.strStatus),
+          });
+        }
+      }
+      return out;
+    },
+    async () => { // balldontlie FIFA — secondary, only when a key is configured
+      if (!process.env.LIVE_API_KEY) throw new Error('balldontlie skipped (no LIVE_API_KEY)');
       const res = await fetch('https://fifa.balldontlie.io/v1/games?per_page=100', {
-        headers: process.env.LIVE_API_KEY ? { Authorization: process.env.LIVE_API_KEY } : {},
+        headers: { Authorization: process.env.LIVE_API_KEY },
       });
       if (!res.ok) throw new Error(`balldontlie HTTP ${res.status}`);
       const { data = [] } = await res.json();
       return data.map((g) => ({
         team1: resolve(g.home_team?.name), team2: resolve(g.visitor_team?.name),
         ft: [g.home_team_score ?? null, g.visitor_team_score ?? null],
-        status: /final|finished|ft/i.test(g.status) ? 'finished' : /live|in/i.test(g.status) ? 'live' : 'scheduled',
-      }));
-    },
-    async () => { // TheSportsDB fallback (free key "3")
-      const res = await fetch('https://www.thesportsdb.com/api/v1/json/3/eventsday.php?d=' +
-        new Date().toISOString().slice(0, 10) + '&s=Soccer');
-      if (!res.ok) throw new Error(`thesportsdb HTTP ${res.status}`);
-      const { events = [] } = await res.json();
-      return events.map((e) => ({
-        team1: resolve(e.strHomeTeam), team2: resolve(e.strAwayTeam),
-        ft: [e.intHomeScore != null ? Number(e.intHomeScore) : null, e.intAwayScore != null ? Number(e.intAwayScore) : null],
-        status: e.strStatus === 'Match Finished' ? 'finished' : e.strStatus === 'Not Started' ? 'scheduled' : 'live',
+        status: /final|finished|ft/i.test(g.status) ? 'finished' : /live|in|half/i.test(g.status) ? 'live' : 'scheduled',
       }));
     },
   ];
@@ -235,7 +258,7 @@ async function fetchLive(pollable, resolve, log) {
       const all = await get();
       const hits = all.filter((r) => r.team1 && r.team2 && want.has(`${r.team1}|${r.team2}`));
       if (hits.length) return hits;
-    } catch (e) { log.push(`provider failed: ${e.message}`); }
+    } catch (e) { log.push(`provider: ${e.message}`); }
   }
   return [];
 }
