@@ -46,6 +46,7 @@ The site is a Next.js static export in an npm-workspaces monorepo. Pages live in
 - Branch off `main`: `git checkout -b add-broadcasts-nigeria` (or `fix-...`, `feat-...`).
 - Keep the change focused — one country, one fix, one feature per PR. No drive-by refactors.
 - Commit messages: `type: short present-tense summary`, e.g. `data: add Nigeria broadcasts`. Reference an issue with `Fixes #12` when there is one.
+- **Sign off your commits** with `git commit -s` — it appends a `Signed-off-by: Your Name <you@email>` line. By signing off you agree to the [Developer Certificate of Origin](https://developercertificate.org): a simple statement that you wrote the change (or have the right to submit it) and that it's contributed under this project's MIT (code) / CC0 (data) licenses. No forms to fill in.
 - CI runs `validate:data` and `build` on every PR; both need to pass.
 - Match the existing code style. Code should read on its own — only comment the *why* when it isn't obvious.
 
