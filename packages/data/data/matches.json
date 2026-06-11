@@ -10,8 +10,8 @@
     "team2": "south-africa",
     "score": {
       "ft": [
-        null,
-        null
+        2,
+        0
       ],
       "ht": [
         null,
@@ -20,7 +20,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 2,
