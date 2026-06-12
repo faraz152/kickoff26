@@ -198,12 +198,15 @@ function applyResults(matches, results, resolve, log) {
 
 // --- providers ------------------------------------------------------------------------------------
 // Verified against TheSportsDB's FIFA World Cup feed (league 4429): its team-name strings all resolve
-// to our slugs and its schedule carries our exact fixtures. TheSportsDB is keyless and primary;
-// balldontlie is a secondary used only when LIVE_API_KEY is set. We query only the date(s) that have a
-// match in the live window, so an idle run stays cheap. Network is isolated here — the engine above is
-// fully testable offline via --mock.
+// to our slugs and its schedule carries our exact fixtures. TheSportsDB is keyless and primary. ESPN's
+// keyless scoreboard backfills any in-window match TheSportsDB simply doesn't carry (it had no row at
+// all for Korea–Czechia on 2026-06-12, leaving the result stuck on "scheduled"). balldontlie stays a
+// third source, used only when LIVE_API_KEY is set. We query only the date(s) that have a match in the
+// live window, so an idle run stays cheap. Network is isolated here — the engine above is fully
+// testable offline via --mock.
 const TSDB = 'https://www.thesportsdb.com/api/v1/json/3';
 const WC_LEAGUE = '4429';
+const ESPN = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
 const num = (v) => (v == null || v === '' ? null : Number(v));
 
 // TheSportsDB strStatus → our status. NS/blank/postponed = scheduled; FT/AET/PEN/"Match Finished" =
@@ -213,6 +216,23 @@ function mapStatus(s) {
   if (!v || /^(NS|Not Started|TBD|Postponed|PPD|Cancelled|CANC|Time to be defined)$/i.test(v)) return 'scheduled';
   if (/^(FT|AET|AP|PEN|FT_PEN|Match Finished|After Extra Time|Penalties)$/i.test(v)) return 'finished';
   return 'live';
+}
+
+// ESPN status.type.name → our status. STATUS_SCHEDULED/POSTPONED = scheduled; any *_FULL_TIME / FINAL /
+// abandoned = finished; everything mid-match (FIRST_HALF, HALFTIME, second half, ET, shootout) = live.
+function mapEspnStatus(name) {
+  const v = (name || '').toUpperCase();
+  if (/SCHEDULED|POSTPONED|CANCELED|CANCELLED|DELAYED|TBD/.test(v)) return 'scheduled';
+  if (/FULL_TIME|FINAL|ABANDONED|FORFEIT/.test(v)) return 'finished';
+  return 'live';
+}
+
+// ESPN buckets fixtures by US-Eastern date, so a UTC-evening kickoff lands on the previous calendar day
+// there. Query a ±1-day range around the UTC match dates as YYYYMMDD-YYYYMMDD to be sure we catch it.
+function espnRange(dates) {
+  const ms = dates.map((d) => Date.parse(`${d}T00:00:00Z`));
+  const ymd = (t) => new Date(t).toISOString().slice(0, 10).replace(/-/g, '');
+  return `${ymd(Math.min(...ms) - 86_400_000)}-${ymd(Math.max(...ms) + 86_400_000)}`;
 }
 
 async function fetchLive(pollable, resolve, log) {
@@ -238,6 +258,24 @@ async function fetchLive(pollable, resolve, log) {
       }
       return out;
     },
+    async () => { // ESPN scoreboard — keyless backfill for fixtures TheSportsDB doesn't carry
+      const res = await fetch(`${ESPN}?dates=${espnRange(dates)}`);
+      if (!res.ok) throw new Error(`espn HTTP ${res.status}`);
+      const { events = [] } = await res.json();
+      const out = [];
+      for (const e of events) {
+        const comp = e.competitions?.[0];
+        const home = comp?.competitors?.find((c) => c.homeAway === 'home');
+        const away = comp?.competitors?.find((c) => c.homeAway === 'away');
+        if (!home || !away) continue;
+        out.push({
+          team1: resolve(home.team?.displayName), team2: resolve(away.team?.displayName),
+          ft: [num(home.score), num(away.score)],
+          status: mapEspnStatus(e.status?.type?.name),
+        });
+      }
+      return out;
+    },
     async () => { // balldontlie FIFA — secondary, only when a key is configured
       if (!process.env.LIVE_API_KEY) throw new Error('balldontlie skipped (no LIVE_API_KEY)');
       const res = await fetch('https://fifa.balldontlie.io/v1/games?per_page=100', {
@@ -253,14 +291,24 @@ async function fetchLive(pollable, resolve, log) {
     },
   ];
 
+  // Merge across providers instead of taking the first hit: a source that carries only some in-window
+  // fixtures (TheSportsDB missing Korea–Czechia) shouldn't shadow the rest. Stop early once every
+  // pollable match is covered so a complete primary feed still costs a single request.
+  const hits = [];
+  const covered = new Set();
+  const canon = (r) => [r.team1, r.team2].sort().join('|');
   for (const get of providers) {
+    if (covered.size >= pollable.length) break;
     try {
       const all = await get();
-      const hits = all.filter((r) => r.team1 && r.team2 && want.has(`${r.team1}|${r.team2}`));
-      if (hits.length) return hits;
+      for (const r of all) {
+        if (!r.team1 || !r.team2 || !want.has(`${r.team1}|${r.team2}`) || covered.has(canon(r))) continue;
+        covered.add(canon(r));
+        hits.push(r);
+      }
     } catch (e) { log.push(`provider: ${e.message}`); }
   }
-  return [];
+  return hits;
 }
 
 // --- main -----------------------------------------------------------------------------------------

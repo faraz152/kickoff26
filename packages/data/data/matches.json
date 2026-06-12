@@ -33,8 +33,8 @@
     "team2": "czech-republic",
     "score": {
       "ft": [
-        null,
-        null
+        2,
+        1
       ],
       "ht": [
         null,
@@ -43,7 +43,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 3,
