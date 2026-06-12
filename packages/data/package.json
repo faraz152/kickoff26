@@ -1,6 +1,6 @@
 {
   "name": "@kickoff26/data",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Open (CC0) FIFA World Cup 2026 dataset — 104 matches, 48 teams, 12 groups, 16 venues, free-first broadcasts — with typed accessors. Built from openfootball.",
   "license": "CC0-1.0",
   "type": "module",
@@ -32,7 +32,7 @@
     "update:results": "node scripts/update-results.mjs"
   },
   "dependencies": {
-    "@kickoff26/core": "^0.1.0"
+    "@kickoff26/core": "^0.2.0"
   },
   "devDependencies": {
     "tsup": "^8.3.5",
