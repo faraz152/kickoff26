@@ -148,7 +148,7 @@
     "team2": "bosnia-herzegovina",
     "score": {
       "ft": [
-        0,
+        1,
         1
       ],
       "ht": [
@@ -158,7 +158,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 8,
