@@ -172,7 +172,7 @@
     "score": {
       "ft": [
         0,
-        0
+        1
       ],
       "ht": [
         null,
@@ -181,7 +181,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 9,
