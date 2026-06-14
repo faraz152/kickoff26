@@ -562,8 +562,8 @@
     "team2": "curacao",
     "score": {
       "ft": [
-        null,
-        null
+        3,
+        1
       ],
       "ht": [
         null,
@@ -572,7 +572,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 26,
