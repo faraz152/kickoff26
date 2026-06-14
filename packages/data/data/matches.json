@@ -296,7 +296,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 14,
@@ -309,8 +309,8 @@
     "team2": "scotland",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        1
       ],
       "ht": [
         null,
@@ -319,7 +319,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 15,
