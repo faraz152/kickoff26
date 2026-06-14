@@ -319,7 +319,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 15,
@@ -447,8 +447,8 @@
     "team2": "turkey",
     "score": {
       "ft": [
-        null,
-        null
+        2,
+        0
       ],
       "ht": [
         null,
@@ -457,7 +457,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 21,
