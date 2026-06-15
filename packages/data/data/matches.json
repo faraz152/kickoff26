@@ -976,8 +976,8 @@
     "team2": "cape-verde",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        0
       ],
       "ht": [
         null,
@@ -986,7 +986,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 44,
