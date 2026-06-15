@@ -999,8 +999,8 @@
     "team2": "uruguay",
     "score": {
       "ft": [
-        null,
-        null
+        1,
+        0
       ],
       "ht": [
         null,
@@ -1009,7 +1009,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 45,
