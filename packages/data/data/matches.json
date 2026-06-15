@@ -585,7 +585,7 @@
     "team2": "ecuador",
     "score": {
       "ft": [
-        0,
+        1,
         0
       ],
       "ht": [
@@ -595,7 +595,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 27,
@@ -723,8 +723,8 @@
     "team2": "tunisia",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        0
       ],
       "ht": [
         null,
@@ -733,7 +733,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 33,
