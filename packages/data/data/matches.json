@@ -838,8 +838,8 @@
     "team2": "egypt",
     "score": {
       "ft": [
-        null,
-        null
+        1,
+        1
       ],
       "ht": [
         null,
@@ -848,7 +848,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 38,
