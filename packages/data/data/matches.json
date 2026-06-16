@@ -1114,8 +1114,8 @@
     "team2": "senegal",
     "score": {
       "ft": [
-        null,
-        null
+        3,
+        1
       ],
       "ht": [
         null,
@@ -1124,7 +1124,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 50,
