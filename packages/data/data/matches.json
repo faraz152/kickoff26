@@ -1137,8 +1137,8 @@
     "team2": "norway",
     "score": {
       "ft": [
-        null,
-        null
+        1,
+        2
       ],
       "ht": [
         null,
@@ -1147,7 +1147,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 51,
