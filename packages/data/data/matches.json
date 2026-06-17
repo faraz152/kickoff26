@@ -1138,7 +1138,7 @@
     "score": {
       "ft": [
         1,
-        2
+        4
       ],
       "ht": [
         null,
@@ -1147,7 +1147,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 51,
