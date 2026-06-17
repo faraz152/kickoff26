@@ -1528,8 +1528,8 @@
     "team2": "croatia",
     "score": {
       "ft": [
-        null,
-        null
+        3,
+        2
       ],
       "ht": [
         null,
@@ -1538,7 +1538,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 68,
