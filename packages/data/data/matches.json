@@ -1528,7 +1528,7 @@
     "team2": "croatia",
     "score": {
       "ft": [
-        3,
+        4,
         2
       ],
       "ht": [
@@ -1538,7 +1538,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 68,
@@ -1551,8 +1551,8 @@
     "team2": "panama",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        0
       ],
       "ht": [
         null,
@@ -1561,7 +1561,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 69,
