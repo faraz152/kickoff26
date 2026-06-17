@@ -1252,8 +1252,8 @@
     "team2": "algeria",
     "score": {
       "ft": [
-        null,
-        null
+        3,
+        0
       ],
       "ht": [
         null,
@@ -1262,7 +1262,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 56,
@@ -1275,8 +1275,8 @@
     "team2": "jordan",
     "score": {
       "ft": [
-        null,
-        null
+        1,
+        1
       ],
       "ht": [
         null,
@@ -1285,7 +1285,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 57,
