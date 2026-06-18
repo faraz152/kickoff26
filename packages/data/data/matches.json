@@ -1551,7 +1551,7 @@
     "team2": "panama",
     "score": {
       "ft": [
-        0,
+        1,
         0
       ],
       "ht": [
@@ -1561,7 +1561,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 69,
