@@ -217,8 +217,8 @@
     "team2": "qatar",
     "score": {
       "ft": [
-        null,
-        null
+        3,
+        0
       ],
       "ht": [
         null,
@@ -227,7 +227,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 11,
