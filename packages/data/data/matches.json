@@ -79,8 +79,8 @@
     "team2": "south-korea",
     "score": {
       "ft": [
-        null,
-        null
+        1,
+        0
       ],
       "ht": [
         null,
@@ -89,7 +89,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 5,
