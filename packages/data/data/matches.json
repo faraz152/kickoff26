@@ -470,7 +470,7 @@
     "team2": "australia",
     "score": {
       "ft": [
-        1,
+        2,
         0
       ],
       "ht": [
@@ -480,7 +480,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 22,
