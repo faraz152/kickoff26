@@ -342,7 +342,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 16,
@@ -355,8 +355,8 @@
     "team2": "haiti",
     "score": {
       "ft": [
-        null,
-        null
+        3,
+        0
       ],
       "ht": [
         null,
@@ -365,7 +365,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 17,
