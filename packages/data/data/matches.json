@@ -493,8 +493,8 @@
     "team2": "paraguay",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        1
       ],
       "ht": [
         null,
@@ -503,7 +503,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 23,
