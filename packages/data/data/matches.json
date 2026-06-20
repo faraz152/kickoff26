@@ -608,7 +608,7 @@
     "team2": "ivory-coast",
     "score": {
       "ft": [
-        0,
+        2,
         1
       ],
       "ht": [
@@ -618,7 +618,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 28,
