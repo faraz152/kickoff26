@@ -746,8 +746,8 @@
     "team2": "sweden",
     "score": {
       "ft": [
-        2,
-        0
+        5,
+        1
       ],
       "ht": [
         null,
@@ -756,7 +756,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 34,
