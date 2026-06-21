@@ -769,8 +769,8 @@
     "team2": "japan",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        4
       ],
       "ht": [
         null,
@@ -779,7 +779,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 35,
