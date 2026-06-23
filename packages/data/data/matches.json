@@ -1321,8 +1321,8 @@
     "team2": "algeria",
     "score": {
       "ft": [
-        null,
-        null
+        1,
+        2
       ],
       "ht": [
         null,
@@ -1331,7 +1331,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 59,
