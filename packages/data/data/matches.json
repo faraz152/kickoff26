@@ -1436,8 +1436,8 @@
     "team2": "uzbekistan",
     "score": {
       "ft": [
-        null,
-        null
+        2,
+        0
       ],
       "ht": [
         null,
@@ -1446,7 +1446,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 64,
