@@ -378,8 +378,8 @@
     "team2": "brazil",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        2
       ],
       "ht": [
         null,
@@ -388,7 +388,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 18,
@@ -401,8 +401,8 @@
     "team2": "haiti",
     "score": {
       "ft": [
-        null,
-        null
+        2,
+        2
       ],
       "ht": [
         null,
@@ -411,7 +411,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 19,
