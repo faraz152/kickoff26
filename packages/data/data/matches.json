@@ -240,8 +240,8 @@
     "team2": "canada",
     "score": {
       "ft": [
-        null,
-        null
+        2,
+        1
       ],
       "ht": [
         null,
@@ -250,7 +250,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 12,
@@ -263,8 +263,8 @@
     "team2": "qatar",
     "score": {
       "ft": [
-        0,
-        0
+        3,
+        1
       ],
       "ht": [
         null,
@@ -273,7 +273,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 13,
