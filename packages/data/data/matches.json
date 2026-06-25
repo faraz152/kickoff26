@@ -103,7 +103,7 @@
     "score": {
       "ft": [
         0,
-        0
+        3
       ],
       "ht": [
         null,
@@ -112,7 +112,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 6,
@@ -125,7 +125,7 @@
     "team2": "south-korea",
     "score": {
       "ft": [
-        0,
+        1,
         0
       ],
       "ht": [
@@ -135,7 +135,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 7,
@@ -1662,7 +1662,7 @@
     "group": null,
     "kickoff_utc": "2026-06-28T19:00:00Z",
     "venue_id": "sofi-stadium",
-    "team1": "2A",
+    "team1": "south-africa",
     "team2": "2B",
     "score": {
       "ft": [
@@ -1800,7 +1800,7 @@
     "group": null,
     "kickoff_utc": "2026-07-01T01:00:00Z",
     "venue_id": "estadio-azteca",
-    "team1": "1A",
+    "team1": "mexico",
     "team2": "3C/E/F/H/I",
     "score": {
       "ft": [
