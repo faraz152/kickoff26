@@ -102,8 +102,8 @@
     "team2": "mexico",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        0
       ],
       "ht": [
         null,
@@ -112,7 +112,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 6,
@@ -125,8 +125,8 @@
     "team2": "south-korea",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        0
       ],
       "ht": [
         null,
@@ -135,7 +135,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 7,
@@ -379,7 +379,7 @@
     "score": {
       "ft": [
         0,
-        2
+        3
       ],
       "ht": [
         null,
@@ -388,7 +388,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 18,
@@ -401,7 +401,7 @@
     "team2": "haiti",
     "score": {
       "ft": [
-        2,
+        4,
         2
       ],
       "ht": [
@@ -411,7 +411,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 19,
