@@ -655,7 +655,7 @@
     "score": {
       "ft": [
         0,
-        1
+        2
       ],
       "ht": [
         null,
@@ -664,7 +664,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 30,
@@ -677,7 +677,7 @@
     "team2": "germany",
     "score": {
       "ft": [
-        1,
+        2,
         1
       ],
       "ht": [
@@ -687,7 +687,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 31,
