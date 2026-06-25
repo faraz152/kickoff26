@@ -654,8 +654,8 @@
     "team2": "ivory-coast",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        1
       ],
       "ht": [
         null,
@@ -664,7 +664,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 30,
@@ -677,8 +677,8 @@
     "team2": "germany",
     "score": {
       "ft": [
-        null,
-        null
+        1,
+        1
       ],
       "ht": [
         null,
@@ -687,7 +687,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 31,
