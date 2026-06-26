@@ -792,8 +792,8 @@
     "team2": "sweden",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        0
       ],
       "ht": [
         null,
@@ -802,7 +802,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 36,
@@ -815,8 +815,8 @@
     "team2": "netherlands",
     "score": {
       "ft": [
-        null,
-        null
+        1,
+        2
       ],
       "ht": [
         null,
@@ -825,7 +825,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 37,
