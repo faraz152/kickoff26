@@ -516,8 +516,8 @@
     "team2": "usa",
     "score": {
       "ft": [
-        null,
-        null
+        3,
+        2
       ],
       "ht": [
         null,
@@ -526,7 +526,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 24,
@@ -539,8 +539,8 @@
     "team2": "australia",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        0
       ],
       "ht": [
         null,
@@ -549,7 +549,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 25,
@@ -792,8 +792,8 @@
     "team2": "sweden",
     "score": {
       "ft": [
-        0,
-        0
+        1,
+        1
       ],
       "ht": [
         null,
@@ -802,7 +802,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 36,
@@ -816,7 +816,7 @@
     "score": {
       "ft": [
         1,
-        2
+        3
       ],
       "ht": [
         null,
@@ -825,7 +825,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 37,
@@ -1708,7 +1708,7 @@
     "group": null,
     "kickoff_utc": "2026-06-30T01:00:00Z",
     "venue_id": "estadio-bbva",
-    "team1": "1F",
+    "team1": "netherlands",
     "team2": "2C",
     "score": {
       "ft": [
@@ -1732,7 +1732,7 @@
     "kickoff_utc": "2026-06-29T17:00:00Z",
     "venue_id": "nrg-stadium",
     "team1": "1C",
-    "team2": "2F",
+    "team2": "japan",
     "score": {
       "ft": [
         null,
@@ -1846,7 +1846,7 @@
     "group": null,
     "kickoff_utc": "2026-07-02T00:00:00Z",
     "venue_id": "levis-stadium",
-    "team1": "1D",
+    "team1": "usa",
     "team2": "3B/E/F/I/J",
     "score": {
       "ft": [
@@ -2007,7 +2007,7 @@
     "group": null,
     "kickoff_utc": "2026-07-03T18:00:00Z",
     "venue_id": "att-stadium",
-    "team1": "2D",
+    "team1": "australia",
     "team2": "2G",
     "score": {
       "ft": [
