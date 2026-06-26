@@ -1229,7 +1229,7 @@
     "team2": "iraq",
     "score": {
       "ft": [
-        1,
+        5,
         0
       ],
       "ht": [
@@ -1239,7 +1239,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 55,
