@@ -940,7 +940,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 42,
@@ -953,8 +953,8 @@
     "team2": "belgium",
     "score": {
       "ft": [
-        0,
-        1
+        1,
+        5
       ],
       "ht": [
         null,
@@ -963,7 +963,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 43,
