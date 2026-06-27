@@ -1482,8 +1482,8 @@
     "team2": "portugal",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        0
       ],
       "ht": [
         null,
@@ -1492,7 +1492,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 66,
@@ -1505,8 +1505,8 @@
     "team2": "uzbekistan",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        0
       ],
       "ht": [
         null,
@@ -1515,7 +1515,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 67,
@@ -1630,7 +1630,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 72,
@@ -1643,8 +1643,8 @@
     "team2": "ghana",
     "score": {
       "ft": [
-        1,
-        0
+        2,
+        1
       ],
       "ht": [
         null,
@@ -1653,7 +1653,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 73,
@@ -1823,7 +1823,7 @@
     "group": null,
     "kickoff_utc": "2026-07-01T16:00:00Z",
     "venue_id": "mercedes-benz-stadium",
-    "team1": "1L",
+    "team1": "england",
     "team2": "3E/H/I/J/K",
     "score": {
       "ft": [
@@ -1893,7 +1893,7 @@
     "kickoff_utc": "2026-07-02T23:00:00Z",
     "venue_id": "bmo-field",
     "team1": "2K",
-    "team2": "2L",
+    "team2": "croatia",
     "score": {
       "ft": [
         null,
