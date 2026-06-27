@@ -930,8 +930,8 @@
     "team2": "iran",
     "score": {
       "ft": [
-        null,
-        null
+        1,
+        1
       ],
       "ht": [
         null,
@@ -940,7 +940,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 42,
@@ -953,8 +953,8 @@
     "team2": "belgium",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        1
       ],
       "ht": [
         null,
@@ -963,7 +963,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "live"
   },
   {
     "id": 43,
@@ -1068,8 +1068,8 @@
     "team2": "saudi-arabia",
     "score": {
       "ft": [
-        null,
-        null
+        0,
+        0
       ],
       "ht": [
         null,
@@ -1078,7 +1078,7 @@
       "et": null,
       "pens": null
     },
-    "status": "scheduled"
+    "status": "finished"
   },
   {
     "id": 48,
@@ -1092,7 +1092,7 @@
     "score": {
       "ft": [
         0,
-        0
+        1
       ],
       "ht": [
         null,
@@ -1101,7 +1101,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 49,
