@@ -1492,7 +1492,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 66,
@@ -1505,8 +1505,8 @@
     "team2": "uzbekistan",
     "score": {
       "ft": [
-        0,
-        0
+        3,
+        1
       ],
       "ht": [
         null,
@@ -1515,7 +1515,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 67,
@@ -1892,7 +1892,7 @@
     "group": null,
     "kickoff_utc": "2026-07-02T23:00:00Z",
     "venue_id": "bmo-field",
-    "team1": "2K",
+    "team1": "portugal",
     "team2": "croatia",
     "score": {
       "ft": [
@@ -1984,7 +1984,7 @@
     "group": null,
     "kickoff_utc": "2026-07-04T01:30:00Z",
     "venue_id": "arrowhead-stadium",
-    "team1": "1K",
+    "team1": "colombia",
     "team2": "3D/E/I/J/L",
     "score": {
       "ft": [
