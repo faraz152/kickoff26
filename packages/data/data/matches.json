@@ -1896,8 +1896,8 @@
     "team2": "croatia",
     "score": {
       "ft": [
-        0,
-        0
+        2,
+        1
       ],
       "ht": [
         null,
@@ -1906,7 +1906,7 @@
       "et": null,
       "pens": null
     },
-    "status": "live"
+    "status": "finished"
   },
   {
     "id": 84,
@@ -2122,7 +2122,7 @@
     "group": null,
     "kickoff_utc": "2026-07-06T19:00:00Z",
     "venue_id": "att-stadium",
-    "team1": "W83",
+    "team1": "portugal",
     "team2": "W84",
     "score": {
       "ft": [
